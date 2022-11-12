@@ -17,7 +17,7 @@ jobs:
             ext: .exe
           - os: macos-latest
             platform: macos
-            ext: .dmg
+            ext: .app
     runs-on: ${{ matrix.os }}
     steps:
       - name: Fetching branch
@@ -30,7 +30,11 @@ jobs:
           python-version: "3.11"
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Compile macOS source
+        if: matrix.platform == 'macos'
+        run: pyinstaller index.py --onefile --windowed --icon=assets/logo.icns --name target${{ matrix.ext }}
       - name: Compile source
+        if: matrix.platform != 'macos'
         run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
       - name: Upload build
         uses: actions/upload-artifact@v3
@@ -53,18 +57,18 @@ jobs:
         with:
           name: GiveMeBadge_${{ github.ref_name }}-win32.exe
           path: builds/
-      - name: Download MacOS build
+      - name: Download macOS build
         uses: actions/download-artifact@v3
         with:
-          name: GiveMeBadge_${{ github.ref_name }}-macos.dmg
+          name: GiveMeBadge_${{ github.ref_name }}-macos.app
           path: builds/
       - name: Release prep
         run: |
           mv builds/target "builds/GiveMeBadge_${{ github.ref_name }}-linux"
           mv builds/target.exe "builds/GiveMeBadge_${{ github.ref_name }}-win32.exe"
-          mv builds/target.dmg "builds/GiveMeBadge_${{ github.ref_name }}-macos.dmg"
+          mv builds/target.app "builds/GiveMeBadge_${{ github.ref_name }}-macos.app"
           chmod +x builds/*-linux
-          printf "SHA512 Checksums: \`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
+          printf "\`SHA512\` Checksums:\n\`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
       - name: Release builds
         uses: softprops/action-gh-release@v1
         with:
