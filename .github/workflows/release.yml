@@ -60,7 +60,10 @@ jobs:
           path: builds/
       - name: Release prep
         run: |
-          chmod +x builds/*_linux-*
+          mv builds/target "builds/GiveMeBadge_${{ github.ref_name }}-linux"
+          mv builds/target.exe "builds/GiveMeBadge_${{ github.ref_name }}-win32.exe"
+          mv builds/target.dmg "builds/GiveMeBadge_${{ github.ref_name }}-macos.dmg"
+          chmod +x builds/*-linux
           printf "SHA512 Checksums: \`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
       - name: Release builds
         uses: softprops/action-gh-release@v1
