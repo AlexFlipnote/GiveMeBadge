@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/8BuVRFM.png" width="750px">
+  <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/95qLERU.png" width="750px">
 </p>
 
 # Requirements
