@@ -31,12 +31,12 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Compile source
-        run: pyinstaller index.py --onefile --icon=assets/logo.ico --name build
+        run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: GiveMeBadge_${{ github.ref_name }}-${{ matrix.platform }}${{ matrix.ext }}
-          path: ./build
+          path: ./dist/target
   release:
     runs-on: ubuntu-latest
     needs: release-target
@@ -58,9 +58,10 @@ jobs:
         with:
           name: GiveMeBadge_${{ github.ref_name }}-macos.dmg
           path: builds/
-      - name: Generate release summmary
+      - name: Release prep
         run: |
-          printf "SHA512 Checksums: \`\`\`\n$(sha256sum builds/*)\n`\`\`\n" > body.md
+          chmod +x builds/*_linux-*
+          printf "SHA512 Checksums: \`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
       - name: Release builds
         uses: softprops/action-gh-release@v1
         with:
