@@ -12,8 +12,8 @@ def check_me(token_test: str) -> dict:
 
 
 print("\n".join([
-    "Hey, welcome to active developer badge bot.",
-    "Please enter your token under to continue."
+    "Hey, welcome to the active developer badge bot.",
+    "Please enter your token below to continue."
 ]))
 
 
