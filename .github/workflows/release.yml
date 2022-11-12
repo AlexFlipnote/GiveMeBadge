@@ -1,0 +1,70 @@
+on:
+  create:
+    ref_type: tag
+name: Automatic release
+
+jobs:
+  release-target:
+    if: github.event.ref_type == 'tag'
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux
+            ext: ""
+          - os: windows-latest
+            platform: win32
+            ext: .exe
+          - os: macos-latest
+            platform: macos
+            ext: .dmg
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Fetching branch
+        uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: Prepare Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Compile source
+        run: pyinstaller index.py --onefile --icon=assets/logo.ico --name build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.repository.name }}_${{ github.ref }}-${{ matrix.platform }}${{ matrix.ext }}
+          path: ./build
+  release:
+    runs-on: ubuntu-latest
+    needs: release-target
+    steps:
+      - name: Create builds directory
+        run: mkdir builds
+      - name: Download Linux build
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ github.repository.name }}_${{ github.ref }}-linux
+          path: builds/
+      - name: Download Windows build
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ github.repository.name }}_${{ github.ref }}-win32.exe
+          path: builds/
+      - name: Download MacOS build
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ github.repository.name }}_${{ github.ref }}-macos.dmg
+          path: builds/
+      - name: Generate release summmary
+        run: |
+          printf "SHA512 Checksums: \`\`\`\n$(sha256sum builds/*)\n`\`\`\n" > body.md
+      - name: Release builds
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          name: ${{ github.repository.name }} ${{ github.ref }}
+          files: builds/*
+          body_path: body.md
