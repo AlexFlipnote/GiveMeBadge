@@ -1,5 +1,6 @@
-# GiveMeBadge
-Pretty simple Discord bot to get the active developer badge
+<p align="center">
+  <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/8BuVRFM.png" width="750px">
+</p>
 
 # Requirements
 - Discord Bot (https://discord.com/developers/applications)
