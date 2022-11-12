@@ -7,7 +7,7 @@ Pretty simple Discord bot to get the active developer badge
   - (Optional if you want to use source code) Python 3.6 or above
 
 ## Video of app/script
-![preview](https://i.alexflipnote.dev/3AZ4ikh.mp4)
+[Click here to watch nice video yes yes](https://i.alexflipnote.dev/3AZ4ikh.mp4)
 > Don't try using the token, I already deleted the bot since it was just for testing, lmao.
 
 ## Usage
