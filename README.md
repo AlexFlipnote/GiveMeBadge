@@ -6,6 +6,10 @@ Pretty simple Discord bot to get the active developer badge
 - Discord server that you own
   - (Optional if you want to use source code) Python 3.6 or above
 
+## Video of app/script
+![preview](https://i.alexflipnote.dev/3AZ4ikh.mp4)
+> Don't try using the token, I already deleted the bot since it was just for testing, lmao.
+
 ## Usage
 1. Enter dist folder and download **GiveMeBadge.exe** (or click [here](https://github.com/AlexFlipnote/GiveMeBadge/raw/master/dist/GiveMeBadge.exe) to download)
 2. Open application
