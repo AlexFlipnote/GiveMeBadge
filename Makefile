@@ -13,9 +13,9 @@ install:
 	pip install -r requirements.txt
 
 compile-win:
-    pyinstaller index.py --onefile --icon=logo.ico --name $(NAME).exe
+    pyinstaller index.py --onefile --icon="./assets/logo.ico" --name $(NAME).exe
     rm $(NAME).exe.spec
 
 compile-linux:
-    python3 -m PyInstaller index.py --onefile --icon=logo.ico --name $(NAME)
+    python3 -m PyInstaller index.py --onefile --icon="./assets/logo.png" --name $(NAME)
     rm $(NAME).spec
