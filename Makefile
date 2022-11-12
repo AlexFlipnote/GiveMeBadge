@@ -13,4 +13,4 @@ install:
 	pip install -r requirements.txt
 
 compile:
-	pyinstaller index.py --onefile --icon=logo.ico --name $(NAME).exe
+	pyinstaller index.py --onefile --icon="./assets/logo.ico" --name $(NAME).exe
