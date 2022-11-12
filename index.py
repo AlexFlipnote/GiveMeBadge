@@ -15,7 +15,7 @@ print("\n".join([
     "Hey, welcome to the active developer badge bot.",
     "Please enter your token below to continue.",
     "",
-    "Keep this application alive after doing so, you can close it after inviting and doing the command."
+    "Don't close this application after entering your token. You may close it after the bot has been invited and the command has been ran."
 ]))
 
 
