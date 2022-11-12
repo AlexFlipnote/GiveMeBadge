@@ -13,9 +13,9 @@ def check_me(token_test: str) -> dict:
 
 print("\n".join([
     "Hey, welcome to the active developer badge bot.",
-    "Please enter your token below to continue.",
+    "Please enter your bot's token below to continue.",
     "",
-    "Don't close this application after entering your token. You may close it after the bot has been invited and the command has been ran."
+    "Don't close this application after entering the token. You may close it after the bot has been invited and the command has been ran."
 ]))
 
 
