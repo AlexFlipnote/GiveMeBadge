@@ -35,7 +35,7 @@ jobs:
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ github.repository.name }}_${{ github.ref }}-${{ matrix.platform }}${{ matrix.ext }}
+          name: GiveMeBadge_${{ github.ref_name }}-${{ matrix.platform }}${{ matrix.ext }}
           path: ./build
   release:
     runs-on: ubuntu-latest
@@ -46,17 +46,17 @@ jobs:
       - name: Download Linux build
         uses: actions/download-artifact@v3
         with:
-          name: ${{ github.repository.name }}_${{ github.ref }}-linux
+          name: GiveMeBadge_${{ github.ref_name }}-linux
           path: builds/
       - name: Download Windows build
         uses: actions/download-artifact@v3
         with:
-          name: ${{ github.repository.name }}_${{ github.ref }}-win32.exe
+          name: GiveMeBadge_${{ github.ref_name }}-win32.exe
           path: builds/
       - name: Download MacOS build
         uses: actions/download-artifact@v3
         with:
-          name: ${{ github.repository.name }}_${{ github.ref }}-macos.dmg
+          name: GiveMeBadge_${{ github.ref_name }}-macos.dmg
           path: builds/
       - name: Generate release summmary
         run: |
@@ -64,7 +64,7 @@ jobs:
       - name: Release builds
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          name: ${{ github.repository.name }} ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
+          name: GiveMeBadge ${{ github.ref_name }}
           files: builds/*
           body_path: body.md
