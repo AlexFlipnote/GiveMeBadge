@@ -12,7 +12,7 @@
 > Don't try using the token, I already deleted the bot since it was just for testing, lmao.
 
 ## Usage
-1. Enter dist folder and download **GiveMeBadge.exe** (or click [here](https://github.com/AlexFlipnote/GiveMeBadge/raw/master/dist/GiveMeBadge.exe) to download)
+1. Click [here](https://github.com/AlexFlipnote/GiveMeBadge/releases) to download the **GiveMeBadge.exe** file.
 2. Open application
    - If Windows tells you that it is not secure, it is because I can't be bothered to pay for a $200 or something digital license to verify my application. If you do not trust the .exe file, you can always run the Python source code instead, both do the same thing to be honest.
 3. Paste your Discord token by copying it and right-clicking on the application to paste (or `CTRL + V`, some support it) and **DO NOT** share the token, please.
