@@ -17,7 +17,7 @@ jobs:
             ext: .exe
           - os: macos-latest
             platform: macos
-            ext: .app
+            ext: .bin
     runs-on: ${{ matrix.os }}
     steps:
       - name: Fetching branch
@@ -30,7 +30,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile macOS source
         if: matrix.platform == 'macos'
-        run: pyinstaller index.py --windowed --icon=assets/logo.icns --name target${{ matrix.ext }}
+        run: pyinstaller index.py --onefile --icon=assets/logo.icns --name target${{ matrix.ext }}
       - name: Compile source
         if: matrix.platform != 'macos'
         run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
@@ -58,7 +58,7 @@ jobs:
       - name: Download macOS build
         uses: actions/download-artifact@v3
         with:
-          name: GiveMeBadge_${{ github.ref_name }}-macos.app
+          name: GiveMeBadge_${{ github.ref_name }}-macos.bin
           path: builds/
       - name: Release prep
         run: |
@@ -67,9 +67,12 @@ jobs:
           mv target "GiveMeBadge_${{ github.ref_name }}-linux"
           chmod +x *-linux
 
-          mv target.app "GiveMeBadge_${{ github.ref_name }}-macos.app"
-          zip -r "GiveMeBadge_${{ github.ref_name }}-macos.app.zip" "GiveMeBadge_${{ github.ref_name }}-macos.app"
-          rm -rf "GiveMeBadge_${{ github.ref_name }}-macos.app"
+          sed -i "s/{{VERSION}}/${{ github.ref_name }}/g" ../assets/mac-app/Contents/Info.plist
+          chmod +x target.bin
+          mv target.bin ../assets/mac-app/Contents/MacOS/givemebadge
+          cp -r ../assets/mac-app "GiveMeBadge_${{ github.ref_name }}-macos.app"
+          zip -r *.app "GiveMeBadge_${{ github.ref_name }}-macos.app.zip"
+          rm -rf *.app
 
           mv target.exe "GiveMeBadge_${{ github.ref_name }}-win32.exe"
 

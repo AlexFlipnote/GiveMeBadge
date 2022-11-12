@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+osascript -e "tell app \"Terminal\"
+  do script \" ${SCRIPT_DIR}/givemebadge\"
+end tell"
