@@ -57,9 +57,18 @@ async def on_ready():
 async def hello(interaction: Interaction):
     """ Says hello or something """
     print(f"> {interaction.user} used the command.")
-    await interaction.response.send_message(
-        f"Hi **{interaction.user}**, thank you for saying hello to me.\n\n__**Where's my badge?**__\nEligibility for the badge is checked by Discord in intervals, at this moment in time, 24 hours is the recommended time to wait before trying.\n\n__**It's been 24 hours, now how do I get the badge?**__\nIf it's already been 24 hours, you can head to https://discord.com/developers/active-developer and fill out the 'form' there.\n\n__**Active Developer Badge Updates**__\nUpdates regarding the Active Developer badge can be found in the Discord Developers server -> discord.gg/discord-developers - in the #active-developer-badge channel."
-    )
+    await interaction.response.send_message("\n".join([
+        f"Hi **{interaction.user}**, thank you for saying hello to me.",
+        "",
+        "__**Where's my badge?**__",
+        "Eligibility for the badge is checked by Discord in intervals, at this moment in time, 24 hours is the recommended time to wait before trying.",
+        "",
+        "__**It's been 24 hours, now how do I get the badge?**__",
+        "If it's already been 24 hours, you can head to https://discord.com/developers/active-developer and fill out the 'form' there.",
+        "",
+        "__**Active Developer Badge Updates**__",
+        "Updates regarding the Active Developer badge can be found in the Discord Developers server -> discord.gg/discord-developers - in the #active-developer-badge channel.",
+    ]))
 
 
 client.run(token)
