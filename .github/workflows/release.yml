@@ -22,8 +22,6 @@ jobs:
     steps:
       - name: Fetching branch
         uses: actions/checkout@v3
-        with:
-          ref: master
       - name: Prepare Python
         uses: actions/setup-python@v4
         with:
