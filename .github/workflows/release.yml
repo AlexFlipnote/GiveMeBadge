@@ -74,7 +74,7 @@ jobs:
           chmod +x target.bin
           mv target.bin ../assets/mac-app/Contents/MacOS/givemebadge
           cp -r ../assets/mac-app "GiveMeBadge_${{ github.ref_name }}-macos.app"
-          zip -r *.app "GiveMeBadge_${{ github.ref_name }}-macos.app.zip"
+          zip -r "GiveMeBadge_${{ github.ref_name }}-macos.app.zip" *.app
           rm -rf *.app
 
           mv target.exe "GiveMeBadge_${{ github.ref_name }}-win32.exe"
