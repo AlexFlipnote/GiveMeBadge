@@ -30,7 +30,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile macOS source
         if: matrix.platform == 'macos'
-        run: pyinstaller index.py --onefile --windowed --icon=assets/logo.icns --name target${{ matrix.ext }}
+        run: pyinstaller index.py --windowed --icon=assets/logo.icns --name target${{ matrix.ext }}
       - name: Compile source
         if: matrix.platform != 'macos'
         run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
