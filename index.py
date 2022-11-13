@@ -2,8 +2,6 @@ import requests
 
 from discord import app_commands, Intents, Client, Interaction
 
-__version__ = "1.0.1"
-
 
 def check_me(token_test: str) -> dict:
     r = requests.get("https://discord.com/api/v10/users/@me", headers={
