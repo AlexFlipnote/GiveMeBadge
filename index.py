@@ -65,7 +65,7 @@ async def hello(interaction: Interaction):
         "If it's already been 24 hours, you can head to https://discord.com/developers/active-developer and fill out the 'form' there.",
         "",
         "__**Active Developer Badge Updates**__",
-        "Updates regarding the Active Developer badge can be found in the Discord Developers server -> discord.gg/discord-developers - in the #active-developer-badge channel.",
+        "Updates regarding the Active Developer badge can be found in the Discord Developers server -> discord.gg/discord-developers - in <#1040380406299644064> channel.",
     ]))
 
 
