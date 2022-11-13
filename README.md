@@ -5,7 +5,7 @@
 # Requirements
 - Discord Bot (https://discord.com/developers/applications)
 - Discord server that you own
-  - (Optional if you want to use source code) Python 3.6 or above
+  - (Optional if you want to use source code) Python 3.8 or above
 
 ## Video of app/script
 **No Text To Speech** https://www.youtube.com/watch?v=PpYw7lQiNqI
