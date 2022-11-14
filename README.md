@@ -35,8 +35,10 @@
    - It might take 24 hours before you are able to claim at all, so please take time to wait a bit if that is the case.
 
 ## Usage: Source code
-Simply run the `index.py` Python file (after installing requirements of course) and then repeat the usage above. The complied version just lets you skip the installing of Python.
-
+1. Install Python
+2. Install requirements `pip install -r requirements.txt`
+3. Run the file with `python index.py`
+4. Go to the usage guide above and skip to **step 3**
 
 ## Help needed?
 Join https://discord.gg/AlexFlipnote if you need help.
