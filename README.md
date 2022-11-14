@@ -17,6 +17,7 @@
 | The bot does not respond! | You need to keep GiveMeBadge open while you do the command: the application keeps your bot alive.
 | My server doesn't popup when I try apply for the badge! |  Is your server a community server? Go to Server Settings and if you see "Enable Community", you need to do that.
 | I tried to open the file but it says it's a virus! (PC/VirusTotal) Am I safe? | Yes you are safe! I am just not going to be bothered to pay a lot of money just to sign the application. It's completely safe. Run it with Python if you really do not like the executable file. |
+| It gives me SSL error and I can't run the application, help! | Sometimes the compiled version can fail on your machine which is not something I can control, you can either try to run it from the source using Python, or you can use the [mobile version](https://discordactivedev.vercel.app/)
 
 ## Usage
 1. Click [here](https://github.com/AlexFlipnote/GiveMeBadge/releases) to download.
