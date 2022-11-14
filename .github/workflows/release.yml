@@ -80,7 +80,7 @@ jobs:
           mv target.exe "GiveMeBadge_${{ github.ref_name }}-win32.exe"
 
           cd ..
-          printf "\`SHA512\` Checksums:\n\`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
+          printf "\`SHA256\` Checksums:\n\`\`\`\n$(sha256sum builds/*)\n\`\`\`\n" > body.md
       - name: Release builds
         uses: softprops/action-gh-release@v1
         with:
