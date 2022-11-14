@@ -11,6 +11,13 @@
 **No Text To Speech** https://www.youtube.com/watch?v=PpYw7lQiNqI
 > Keep in mind that it has been moved to [here](https://github.com/AlexFlipnote/GiveMeBadge/releases) to make it easier and better.
 
+## FAQ
+| Question | Answer |
+| --- | --- |
+| The bot does not respond! | You need to keep GiveMeBadge open while you do the command: the application keeps your bot alive.
+| My server doesn't popup when I try apply for the badge! |  Is your server a community server? Go to Server Settings and if you see "Enable Community", you need to do that.
+| I tried to open the file but it says it's a virus! (PC/VirusTotal) Am I safe? | Yes you are safe! I am just not going to be bothered to pay a lot of money just to sign the application. It's completely safe. Run it with Python if you really do not like the executable file. |
+
 ## Usage
 1. Click [here](https://github.com/AlexFlipnote/GiveMeBadge/releases) to download.
    - You will need Windows 8 or higher for the .exe to work.
