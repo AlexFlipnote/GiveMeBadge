@@ -1,10 +1,10 @@
 NAME = GiveMeBadge
 
 target:
-	@echo "Hello World"
+	@echo "say hello to everyone"
 
 clean:
-	@echo "Cleaning up..."
+	@echo "Cleaning up junk files..."
 	rm -rf ./build
 	rm -rf ./dist
 	rm *.exe.spec
