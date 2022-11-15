@@ -62,7 +62,7 @@ async def _init_command_response(interaction: Interaction):
         "",
         "__**Active Developer Badge Updates**__",
         "Updates regarding the Active Developer badge can be found in the "
-        "Discord Developers server -> discord.gg/discord-developers - in the #active-developer-badge channel.",
+        "Discord Developers server -> discord.gg/discord-developers - in the #active-dev-badge channel.",
     ]))
 
 
