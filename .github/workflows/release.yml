@@ -3,9 +3,6 @@ on:
     ref_type: tag
 name: Automatic release
 
-env:
-  KEY_THING: ${{ secrets.FUNNY_PASSWORD }}
-
 jobs:
   release-target:
     if: github.event.ref_type == 'tag'
@@ -34,10 +31,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile macOS source
         if: matrix.platform == 'macos'
-        run: pyinstaller index.py --onefile --icon=assets/logo.icns --name target${{ matrix.ext }} --key ${{ env.KEY_THING }}
+        run: pyinstaller index.py --onefile --icon=assets/logo.icns --name target${{ matrix.ext }}
       - name: Compile source
         if: matrix.platform != 'macos'
-        run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }} --key ${{ env.KEY_THING }}
+        run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
