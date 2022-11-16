@@ -43,6 +43,7 @@ jobs:
           python ./waf all --target-arch=64bit
           cd ..
           pip uninstall pyinstaller -y
+          pip install wheel
           python setup.py install
           cd ..
           pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
