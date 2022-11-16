@@ -59,7 +59,7 @@ jobs:
       - name: Download Windows build
         uses: actions/download-artifact@v3
         with:
-          name: GiveMeBadge_${{ github.ref_name }}-win32.exe
+          name: GiveMeBadge_${{ github.ref_name }}-win64.exe
           path: builds/
       - name: Download macOS build
         uses: actions/download-artifact@v3
