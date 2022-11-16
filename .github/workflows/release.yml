@@ -38,11 +38,11 @@ jobs:
       - name: Compile win64 source
         if: matrix.platform == 'win64'
         run: |
+          pip uninstall pyinstaller -y
           git clone https://github.com/pyinstaller/pyinstaller
           cd pyinstaller\bootloader
           python ./waf all --target-arch=64bit
           cd ..
-          pip uninstall pyinstaller -y
           pip install wheel
           python setup.py install
           cd ..
