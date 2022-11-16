@@ -37,7 +37,7 @@ jobs:
         run: pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
       - name: Compile win64 source
         if: matrix.platform == 'win64'
-        run: mkdir dist && nuitka --follow-imports --onefile index.py --windows-icon-from-ico="./assets/logo.ico" -o ./dist/target${{ matrix.ext }}
+        run: mkdir dist && nuitka --follow-imports --onefile index.py --assume-yes-for-downloads --windows-icon-from-ico="./assets/logo.ico" -o ./dist/target${{ matrix.ext }}
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
