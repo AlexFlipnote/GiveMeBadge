@@ -18,7 +18,3 @@ install:
 
 compile_pyinstaller:
 	pyinstaller index.py --onefile --icon="./assets/logo.ico" --name $(NAME).exe
-
-compile_nuitka:
-	mkdir -p dist
-	nuitka --follow-imports --onefile index.py --windows-icon-from-ico="./assets/logo.ico" -o ./dist/$(NAME).exe

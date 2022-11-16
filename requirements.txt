@@ -1,6 +1,3 @@
 pyinstaller
 discord.py
 requests
-ordered-set
-zstandard
-nuitka
