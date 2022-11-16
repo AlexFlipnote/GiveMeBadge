@@ -1,4 +1,5 @@
-discord.py
 pyinstaller
+discord.py
 requests
-tinyaes
+ordered-set
+zstandard
