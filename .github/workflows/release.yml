@@ -25,7 +25,7 @@ jobs:
       - name: Prepare Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
           cache: "pip"
       - name: Install requirements
         run: pip install -r requirements.txt
@@ -39,11 +39,11 @@ jobs:
         if: matrix.platform == 'win64'
         run: |
           pip uninstall pyinstaller -y
+          pip install wheel
           git clone https://github.com/pyinstaller/pyinstaller
           cd pyinstaller\bootloader
           python ./waf all --target-arch=64bit
           cd ..
-          pip install wheel
           python setup.py install
           cd ..
           pyinstaller index.py --onefile --icon=assets/logo.ico --name target${{ matrix.ext }}
