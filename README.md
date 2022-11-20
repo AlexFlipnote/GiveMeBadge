@@ -49,21 +49,67 @@
 <details open>
 <summary>Mac</summary>
 
-1. Install Python
-2. Install requirements `python3 -m pip install -r requirements.txt`
-3. Run the file with `python3 index.py`
+1. Install Python3.9 `brew install python@3.9`
+2. Install requirements `python3.9 -m pip install -r requirements.txt`
+3. Run the file with `python3.9 index.py`
 4. Go to the usage guide above and skip to **step 3**
 </pre>
 </details>
 
 <details open>
-<summary>Linux</summary>
+<summary>Linux servers</summary>
 
-0. Install Python
-1. **Python3** is installed by default on linux
-2. Install requirements `python3 -m pip install -r requirements.txt`
-3. Run the file with `python3 index.py`
+<details open><summary>Ubuntu 18.04</summary>
+
+1. adding the `deadsnakes` ppa to install Python 3.9 `sudo add-apt-repository -y ppa:deadsnakes/ppa`
+2. Install Python3.9 and pre-requirements `sudo apt -y install python3.9 python3.9-dev python3.9-venv python3-pip git build-essential`
+3. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
+4. Run the file with `python3.9 index.py`
+5. Go to the usage guide above and skip to **step 3**
+
+</details>
+
+<details open><summary>Ubuntu 20.04</summary>
+
+1. Install Python3.9 and pre-requirements `sudo apt -y install python3.9 python3.9-dev python3.9-venv python3-pip git build-essential`
+2. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
+3. Run the file with `python3.9 index.py`
 4. Go to the usage guide above and skip to **step 3**
+
+</details>
+
+<details open><summary>Ubuntu 22.04</summary>
+
+1. adding the `deadsnakes` ppa to install Python 3.9 `sudo add-apt-repository -y ppa:deadsnakes/ppa`
+2. Install Python3.9 and pre-requirements `sudo apt -y install python3.9 python3.9-dev python3.9-venv python3-pip git build-essential`
+3. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
+4. Run the file with `python3.9 index.py`
+5. Go to the usage guide above and skip to **step 3**
+
+</details>
+
+
+<details open><summary>Fedora</summary>
+
+1. Install Python3.9 and pre-requirements `sudo dnf -y install python39 git @development-tools`
+2. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
+3. Run the file with `python3.9 index.py`
+4. Go to the usage guide above and skip to **step 3**
+
+</details>
+
+<details open><summary>Debian 11</summary>
+
+1. Install Python3.9 and pre-requirements `sudo apt -y install python3 python3-dev python3-venv python3-pip git`
+2. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
+3. Run the file with `python3.9 index.py`
+4. Go to the usage guide above and skip to **step 3**
+
+</details>
+
+More distros?
+comming soon... :)
+
 </pre>
 </details>
 
