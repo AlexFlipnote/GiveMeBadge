@@ -98,15 +98,6 @@
 
 </details>
 
-<details open><summary>Debian 11</summary>
-
-1. Install Python3.9 and pre-requirements `sudo apt -y install python3 python3-dev python3-venv python3-pip git`
-2. Install python3.9 requirements `python3.9 -m pip install -r requirements.txt`
-3. Run the file with `python3.9 index.py`
-4. Go to the usage guide above and skip to **step 3**
-
-</details>
-
 More distros?
 comming soon... :)
 
