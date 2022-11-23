@@ -1,3 +1,2 @@
-pyinstaller
 discord.py
 requests
