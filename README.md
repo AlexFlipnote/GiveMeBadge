@@ -5,6 +5,7 @@
 # Requirements 🧾
 - Discord Bot (https://discord.com/developers/applications)
 - Python 3.6 or above (https://www.python.org/downloads)
+  - Recommended version (3.10.2): https://www.python.org/downloads/release/python-3102/
 - Discord server that you own
 
 ## Usage ✨
