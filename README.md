@@ -3,7 +3,7 @@
 </p>
 
 # Requirements 🧾
-- Discord developer panel: (https://discord.com/developers/applications)
+- Discord Bot (from developer panel): (https://discord.com/developers/applications)
 - Python 3.6 or above: (https://www.python.org/downloads)
   - Recommended version (3.10.2): https://www.python.org/downloads/release/python-3102/
 - Discord server that you own.
@@ -13,7 +13,7 @@
 If you need visual help on how to do this, then [click here and watch this video](https://i.alexflipnote.dev/7TzozoL.mp4)
 
 ## Usage ✨
-1. Download and install [Python](https://discord.com/developers/applications) if you haven't already.
+1. Download and install [Python](https://www.python.org/downloads) if you haven't already.
 
    ![](https://i.alexflipnote.dev/2Ucs5Hf.png)
 2. Open CMD/Terminal inside this folder.
