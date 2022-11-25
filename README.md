@@ -7,6 +7,7 @@
 - Python 3.6 or above (https://www.python.org/downloads)
   - Recommended version (3.10.2): https://www.python.org/downloads/release/python-3102/
 - Discord server that you own
+  - Settings -> Enable Community (if you haven't already)
 
 ## Video tutorial 📼
 If you need visual help on how to do this, then [click here and watch this video](https://i.alexflipnote.dev/7TzozoL.mp4)
