@@ -95,6 +95,8 @@ async def _init_command_response(interaction: Interaction) -> None:
         "👋 I've also closed the GiveMeBadge window for you, don't worry - you'll still get your badge!",
     ]))
 
+    exit()
+
 
 @client.tree.command()
 async def hello(interaction: Interaction):
