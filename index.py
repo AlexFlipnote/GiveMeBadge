@@ -75,17 +75,24 @@ async def _init_command_response(interaction: Interaction) -> None:
     await interaction.response.send_message("\n".join([
         f"Hi **{interaction.user}**, thank you for saying hello to me.",
         "",
-        "__**Where's my badge?**__",
-        "Eligibility for the badge is checked by Discord in intervals, "
-        "at this moment in time, 24 hours is the recommended time to wait before trying.",
+        "> __**Where's my badge?**__",
+        "> Eligibility for the badge is checked by Discord in intervals ",
+        "> at this moment in time, 24 hours is the recommended time to wait before trying.",
         "",
-        "__**It's been 24 hours, now how do I get the badge?**__",
-        "If it's already been 24 hours, you can head to "
-        "https://discord.com/developers/active-developer and fill out the 'form' there.",
+        "> __**It's been 24 hours, now how do I get the badge?**__",
+        "> If it's already been 24 hours, you can head to "
+        "> https://discord.com/developers/active-developer and fill out the 'form' there.",
         "",
-        "__**Active Developer Badge Updates**__",
-        "Updates regarding the Active Developer badge can be found in the "
-        "Discord Developers server -> discord.gg/discord-developers - in the #active-dev-badge channel.",
+        "> __**I'm still not eligible! What do I do?**__",
+        "> You might need to wait a bit longer, or there's currently ",
+        "> something on Discord's side. You can visit the Discord Developers server (linked below)",
+        "> to see if others have the same issue.",
+        "",
+        "> __**Active Developer Badge Updates**__",
+        "> Updates regarding the Active Developer badge can be found in the "
+        "> Discord Developers server -> discord.gg/discord-developers - in the #active-dev-badge channel.",
+        "",
+        "👋 I've also closed the GiveMeBadge window for you, don't worry - you'll still get your badge!",
     ]))
 
 
