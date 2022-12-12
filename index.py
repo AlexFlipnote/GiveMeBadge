@@ -65,7 +65,7 @@ async def _init_command_response(interaction: Interaction) -> None:
     """ This is called when the command is ran
         The reason the command is outside of the command function
         is because there are two ways to run the command and slash commands
-        do not natevily support aliases, so we have to fake it.
+        do not natively support aliases, so we have to fake it.
     """
 
     # Responds in the console that the command has been ran
