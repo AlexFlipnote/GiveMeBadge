@@ -21,7 +21,7 @@ If you need visual help on how to do this, then [click here and watch this video
 
 3. Open the script by double clicking on `GiveMeBadgeWINDOWS.bat` if you're on Windows, and `GiveMeBadgeMAC_LINUX.sh` if you're on Mac/Linux (This will install requirements automatically, and start the bot.).
  
-    ![](https://i.alexflipnote.dev/9BNt3XM.png)
+    ![](https://i.imgur.com/UD6QdSQ.png)
 4. Paste your Discord token by copying it and right-clicking on the application. Some users can also try `CTRL + V` or `CTRL + Shift + V`.
    - **IMPORTANT:** DO NOT share the token! Others can use this to log into your account.
    - Note that to make it respond to your commands, you will need to keep the application/script window alive as it is what runs the bot to begin with. After you are done with everything, you can safely just close it.
