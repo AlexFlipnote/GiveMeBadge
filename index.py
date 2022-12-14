@@ -2,33 +2,104 @@ import requests
 
 from discord import app_commands, Intents, Client, Interaction
 
-# This will print the information in console
-print("\n".join([
-    "Hey, welcome to the active developer badge bot.",
-    "Please enter your bot's token below to continue.",
-    "",
-    "Don't close this application after entering the token. "
-    "You may close it after the bot has been invited and the command has been ran."
-]))
-
-
-while True:
-    # While loop starts and used Python.input() to get the token
-    token = input("> ")
-
-    # Then validates if the token you provided was correct or not
+# Try: will "try" to run the code
+# If it fails the code will continue at the except: statement further down
+try:
+    # Checks to see if there's a locally stored token or not
+    with open(".token.txt", "r") as f:
+        token = f.read()
+    
+    # If it finds one, it then validates if the token you provided was correct or not
     r = requests.get("https://discord.com/api/v10/users/@me", headers={
         "Authorization": f"Bot {token}"
     })
 
-    # If the token is correct, it will continue the code
+    # If the token is correct, it will ask you if you'd like to continue the code using the local token
     data = r.json()
     if data.get("id", None):
-        break  # Breaks the while loop
+        print("Found a locally stored token, would you like to sign in using it?\nYes/No")
+        
+        while True:
+            # While loop starts and used Python.input() to get the token
+            LoginWithToken = input("> ")
+            
+            # Python.lower() makes the input lowercase, so "Yes" and "yes" would both be treated the same
+            # If you either says "yes" or "y" the bot will start using the locally stored token
+            if LoginWithToken.lower() == "yes" or LoginWithToken.lower() == "y":
+                print("Logging in using locally stored token.")
+                print("You may close this window after you've ran the bot's command.")
+                break # Breaks the while loop
+            
+            
+            # If you say no, the code will not use the locally stored token
+            # And will instead ask you to input a new token
+            if LoginWithToken.lower() == "no" or LoginWithToken.lower() == "n":
+                raise # Go to the except: statement
+            
+            print("\nThat doesn't seem like a valid input, please either input \"Yes\" or \"No\"")
+            
 
-    # If the token is incorrect, it will print the error message
-    # and ask you to enter the token again (while Loop)
-    print("\nSeems like you entered an invalid token. Try again.")
+    # If the token is incorrect, it will continue the code without it, asking you to input a new one
+    else:
+        raise # Go to the except: statement
+
+
+# The except: statement will be triggered if the
+# Earlier try: statement fails or the "raise" function is called
+except:
+    # This will print the information in console
+    print("\n".join([
+        "Hey, welcome to the active developer badge bot.",
+        "Please enter your bot's token below to continue.",
+        "",
+        "Don't close this application after entering the token. "
+        "You may close it after the bot has been invited and the command has been ran."
+    ]))
+
+    while True:
+        # While loop starts and used Python.input() to get the token
+        token = input("> ")
+
+        # Then validates if the token you provided was correct or not
+        r = requests.get("https://discord.com/api/v10/users/@me", headers={
+            "Authorization": f"Bot {token}"
+        })
+
+        # If the token is correct, it will continue the code
+        data = r.json()
+        if data.get("id", None):
+            break  # Breaks the while loop
+
+        # If the token is incorrect, it will print the error message
+        # and ask you to enter the token again (while Loop)
+        print("\nSeems like you entered an invalid token. Try again.")
+
+
+    # This will print this question into the console
+    print("\n".join([
+        "",
+        "Would you like to save the token locally?",
+        "If you do you'll be able to run this application in the future without pasting in your token",
+        "Yes/No"
+    ]))
+
+    while True:
+        # While loop starts and used Python.input() to get the token
+        saveToken = input("> ")
+        
+        # Python.lower() makes the input lowercase, so "Yes" and "yes" would both be treated the same
+        # If you either say "yes" or "y" the token will be saved to .token.txt - a hidden file that isn't visible in file explorer
+        if saveToken.lower() == "yes" or saveToken.lower() == "y":
+            with open(".token.txt", "w") as f:
+                f.write(token)            
+            print("Saved token to disk.")
+            break # Breaks the while loop
+        
+        # If you say no, the code will continue without saving the token
+        if saveToken.lower() == "no" or saveToken.lower() == "n":
+            break # Breaks the while loop
+        
+        print("\nThat doesn't seem like a valid input, please either input \"Yes\" or \"No\"")
 
 
 class FunnyBadge(Client):

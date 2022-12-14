@@ -3,6 +3,7 @@
 *.onefile-build/
 *.dist/
 *.exe
+.token.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
