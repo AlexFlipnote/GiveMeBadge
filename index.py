@@ -79,7 +79,7 @@ except:
     print("\n".join([
         "",
         "Would you like to save the token locally?",
-        "If you do you'll be able to run this application in the future without pasting in your token",
+        "If you do you'll be able to run this application in the future without pasting in your token.",
         "Yes/No"
     ]))
 
@@ -90,6 +90,7 @@ except:
         # Python.lower() makes the input lowercase, so "Yes" and "yes" would both be treated the same
         # If you either say "yes" or "y" the token will be saved to .token.txt - a hidden file that isn't visible in file explorer
         if saveToken.lower() == "yes" or saveToken.lower() == "y":
+            # Opens the file .token.txt in "write mode" and saves the token to it
             with open(".token.txt", "w") as f:
                 f.write(token)            
             print("Saved token to disk.")
