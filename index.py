@@ -92,6 +92,7 @@ async def on_ready():
 
 @client.tree.command()
 async def hello(interaction: Interaction):
+    """ Says hello or something """
     # Responds in the console that the command has been ran
     print(f"> {interaction.user} used the command.")
 
