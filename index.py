@@ -4,11 +4,10 @@ import inspect
 
 from discord import app_commands, Intents, Client, Interaction
 
-# This will print the information in console
 # inspect.cleandoc() is used to remove the indentation from the message
-# while using triple quotes so that it looks nice in the code
-# Normally some developers don't use it and move the text all the way back to the left
-# However I personally prefer clean code
+# when using triple quotes (makes the code much cleaner)
+# Typicly developers woudln't use cleandoc rather they move the text
+# all the way to the left
 print(inspect.cleandoc("""
     Hey, welcome to the active developer badge bot.
     Please enter your bot's token below to continue.
@@ -19,42 +18,46 @@ print(inspect.cleandoc("""
 
 
 try:
-    with open("./config.json", "r", encoding="utf8") as f:
+    with open("config.json") as f:
         config = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError):
-    # You can in theory also do "except Exception", but it is not recommended
+    # You can in theory also do "except:" or "except Exception:", but it is not recommended
+    # unless you want to suppress all errors
     config = {}
 
 
 while True:
-    # While loop starts and used Python.input() to get the token
+    # Attempts to pull a token from config
+    # If no token is stored the token variable stores value None
     token = config.get("token", None)
     if token:
-        print("\n--- Detected token in config.json saved from previous run, using that. ---\n")
+        print("\n--- Detected token in config.json (saved from previous run). Using stored token. ---\n")
     else:
+        # Take input from the user if no token is detected
         token = input("> ")
 
-    # Then validates if the token you provided was correct or not
+    # Validates if the token you provided was correct or not
     # There is also another one called aiohttp.ClientSession() which is async
     # However for such simplicity, it is not worth playing around with async/await outside of the event loop
-    r = requests.get("https://discord.com/api/v10/users/@me", headers={
+    data = requests.get("https://discord.com/api/v10/users/@me", headers={
         "Authorization": f"Bot {token}"
-    })
+    }).json()
 
     # If the token is correct, it will continue the code
-    data = r.json()
     if data.get("id", None):
-        break  # Breaks the while loop
+        break  # Breaks out of the while loop
 
-    # If the token is incorrect, it will print the error message
-    # and ask you to enter the token again (while Loop)
+    # If the token is incorrect, an error will be printed
+    # You will then be asked to enter a token again (while Loop)
     print("\nSeems like you entered an invalid token. Try again by entering the correct token.")
+    
     # Resets the config so that it doesn't use the previous token again
     config = {}
 
+
 # This is used to save the token for the next time you run the bot
-with open("./config.json", "w", encoding="utf8") as f:
-    # Making sure that 'token' key exists in the config.json file
+with open("config.json", "w") as f:
+    # Check if 'token' key exists in the config.json file
     config["token"] = token
     # This dumps our working setting to the config.json file
     # Indent is used to make the file look nice and clean
@@ -76,7 +79,6 @@ class FunnyBadge(Client):
 # Since this is a simple bot to run 1 command over slash commands
 # We then do not need any intents to listen to events
 client = FunnyBadge(intents=Intents.none())
-
 
 @client.event
 async def on_ready():
@@ -102,19 +104,18 @@ async def hello(interaction: Interaction):
     await interaction.response.send_message(inspect.cleandoc(f"""
         Hi **{interaction.user}**, thank you for saying hello to me.
 
-        __**Where's my badge?**__
-        Eligibility for the badge is checked by Discord in intervals,
-        at this moment in time, 24 hours is the recommended time to wait before trying.
+        > __**Where's my badge?**__
+        > Eligibility for the badge is checked by Discord in intervals,
+        > at this moment in time, 24 hours is the recommended time to wait before trying.
 
-        __**It's been 24 hours, now how do I get the badge?**__
-        If it's already been 24 hours, you can head to
-        https://discord.com/developers/active-developer and fill out the 'form' there.
+        > __**It's been 24 hours, now how do I get the badge?**__
+        > If it's already been 24 hours, you can head to
+        > https://discord.com/developers/active-developer and fill out the 'form' there.
 
-        __**Active Developer Badge Updates**__
-        Updates regarding the Active Developer badge can be found in the
-        Discord Developers server -> https://discord.gg/discord-developers - in the #active-dev-badge channel.
+        > __**Active Developer Badge Updates**__
+        > Updates regarding the Active Developer badge can be found in the
+        > Discord Developers server -> https://discord.gg/discord-developers - in the #active-dev-badge channel.
     """))
-
 
 # Runs the bot with the token you provided
 client.run(token)
