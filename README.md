@@ -3,11 +3,11 @@
 </p>
 
 # Requirements 🧾
-- Discord Bot (from developer panel): (https://discord.com/developers/applications)
-- Python 3.6 or above: (https://www.python.org/downloads)
-  - Recommended version (3.10.2): https://www.python.org/downloads/release/python-3102/
-- Discord server that you own.
-  - `Settings` -> `Enable Community` (if you haven't already)
+- A Discord Bot (create one using the [Discord developer portal](https://discord.com/developers/applications))
+- Python 3.6 or above (https://www.python.org/downloads)
+  - Recommended version [3.10.2](https://www.python.org/downloads/release/python-3102/)
+- A Discord server that you own.
+  - Make sure to "enable community" in your server if you haven't already! (`Settings` -> `Enable Community`)
 
 ## Video Tutorial 📼
 If you need visual help on how to do this, then [click here and watch this video](https://i.alexflipnote.dev/7TzozoL.mp4)<br>
@@ -43,3 +43,10 @@ However if you need with voiceover, you can [click here and watch NTTS video on 
 
 ## Help needed? 📞
 Join https://discord.gg/AlexFlipnote if you need help.
+
+## Contributors
+Big thanks to all of the amazing people who have helped by contributing to this project!
+
+<a href="https://github.com/AlexFlipnote/GiveMeBadge/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AlexFlipnote/GiveMeBadge" />
+</a>
