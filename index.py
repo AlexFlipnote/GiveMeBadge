@@ -35,6 +35,8 @@ while True:
         token = input("> ")
 
     # Then validates if the token you provided was correct or not
+    # There is also another one called aiohttp.ClientSession() which is async
+    # However for such simplicity, it is not worth playing around with async/await outside of the event loop
     r = requests.get("https://discord.com/api/v10/users/@me", headers={
         "Authorization": f"Bot {token}"
     })
