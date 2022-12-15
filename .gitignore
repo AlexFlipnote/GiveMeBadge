@@ -1,8 +1,5 @@
 # Custom
-*.build/
-*.onefile-build/
-*.dist/
-*.exe
+config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
