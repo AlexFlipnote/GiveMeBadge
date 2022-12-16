@@ -1,22 +1,40 @@
 import requests
+from requests.exceptions import RequestException
 import json
 import inspect
+from colorama import Fore, Style
 
 from discord import app_commands, Intents, Client, Interaction
+
+# ASCII logo, uses Colorama for coloring 
+# the logo. To clean the code I've used the replace function
+# to color some of the logo.
+logo = f"""
+{Fore.GREEN}                 &(%
+{Fore.CYAN}  %###((((((((((((((((#
+{Fore.CYAN}###(((((((((((  .(((((
+{Fore.CYAN}####(((((  (((( *********
+{Fore.CYAN}####((    (((#************#
+{Fore.CYAN}##************************#
+{Fore.CYAN}##************************#
+{Fore.CYAN}##************************#
+{Fore.CYAN}##************************#
+{Fore.BLUE}&*************************{Fore.RESET}\n
+""".replace("*", f"{Fore.BLUE}*").replace("(", f"{Fore.GREEN}(")
 
 # inspect.cleandoc() is used to remove the indentation from the message
 # when using triple quotes (makes the code much cleaner)
 # Typicly developers woudln't use cleandoc rather they move the text
 # all the way to the left
-print(inspect.cleandoc("""
+print(logo+inspect.cleandoc(f"""
     Hey, welcome to the active developer badge bot.
     Please enter your bot's token below to continue.
 
-    Don't close this application after entering the token
-    You may close it after the bot has been invited and the command has been ran
+    {Style.DIM}Don't close this application after entering the token
+    You may close it after the bot has been invited and the command has been ran{Style.RESET_ALL}
 """))
 
-
+# Try except block is useful for when you'd like to capture errors
 try:
     with open("config.json") as f:
         config = json.load(f)
@@ -31,7 +49,7 @@ while True:
     # If no token is stored the token variable stores value None
     token = config.get("token", None)
     if token:
-        print("\n--- Detected token in config.json (saved from previous run). Using stored token. ---\n")
+        print(f"\n--- Detected token in {Fore.BLUE}config.json{Fore.RESET} (saved from a previous run). Using stored token. ---\n")
     else:
         # Take input from the user if no token is detected
         token = input("> ")
@@ -49,7 +67,7 @@ while True:
 
     # If the token is incorrect, an error will be printed
     # You will then be asked to enter a token again (while Loop)
-    print("\nSeems like you entered an invalid token. Try again by entering the correct token.")
+    print(f"\nSeems like you entered an {Fore.RED}invalid token{Fore.RESET}. Please enter a valid token (see Github repo for help).")
     
     # Resets the config so that it doesn't use the previous token again
     config = {}
@@ -59,6 +77,7 @@ while True:
 with open("config.json", "w") as f:
     # Check if 'token' key exists in the config.json file
     config["token"] = token
+
     # This dumps our working setting to the config.json file
     # Indent is used to make the file look nice and clean
     # If you don't want to indent, you can remove the indent=2 from code
@@ -66,7 +85,7 @@ with open("config.json", "w") as f:
 
 
 class FunnyBadge(Client):
-    def __init__(self, *, intents: Intents):
+    def __init__(self, *, intents: Intents) -> None:
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
 
@@ -88,17 +107,17 @@ async def on_ready():
     """
     print(inspect.cleandoc(f"""
         Logged in as {client.user} (ID: {client.user.id})
-
+        
         Use this URL to invite {client.user} to your server:
-        https://discord.com/api/oauth2/authorize?client_id={client.user.id}&scope=applications.commands%20bot
-    """))
+        {Fore.BLUE}https://discord.com/api/oauth2/authorize?client_id={client.user.id}&scope=applications.commands%20bot{Fore.RESET}
+    """), end="\n\n")
 
 
 @client.tree.command()
 async def hello(interaction: Interaction):
     """ Says hello or something """
     # Responds in the console that the command has been ran
-    print(f"> {interaction.user} used the command.")
+    print(f"> {Style.BRIGHT}{interaction.user}{Style.RESET_ALL} used the command.")
 
     # Then responds in the channel with this message
     await interaction.response.send_message(inspect.cleandoc(f"""
