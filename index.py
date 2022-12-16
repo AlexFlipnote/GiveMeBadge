@@ -5,9 +5,7 @@ import inspect
 from colorama import Fore, Style
 from discord import app_commands, Intents, Client, Interaction
 
-# ASCII logo, uses Colorama for coloring
-# the logo. To clean the code I've used the replace function
-# to color some of the logo.
+# ASCII logo, uses Colorama for coloring the logo. 
 logo = f"""
 {Fore.LIGHTBLUE_EX}       {Fore.GREEN}cclloooooooooooooo.
 {Fore.LIGHTBLUE_EX},;;;:{Fore.GREEN}oooooooooooooooooooooo.
@@ -57,11 +55,16 @@ while True:
         token = input("> ")
 
     # Validates if the token you provided was correct or not
-    # There is also another one called aiohttp.ClientSession() which is async
-    # However for such simplicity, it is not worth playing around with async/await outside of the event loop
-    data = requests.get("https://discord.com/api/v10/users/@me", headers={
-        "Authorization": f"Bot {token}"
-    }).json()
+    # There is also another one called aiohttp.ClientSession() which is asynchronous
+    # However for such simplicity, it is not worth playing around with async 
+    # and await keywords outside of the event loop
+    try:
+        data = requests.get("https://discord.com/api/v10/users/@me", headers={
+            "Authorization": f"Bot {token}"
+        }).json()
+    except requests.exceptions.RequestException as e:
+        # Tells python to quit, along with printing some info on the error that occured
+        raise SystemExit(e)
 
     # If the token is correct, it will continue the code
     if data.get("id", None):
