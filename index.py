@@ -27,7 +27,7 @@ logo = f"""
 # when using triple quotes (makes the code much cleaner)
 # Typicly developers woudln't use cleandoc rather they move the text
 # all the way to the left
-print(logo+inspect.cleandoc(f"""
+print(logo + inspect.cleandoc(f"""
     Hey, welcome to the active developer badge bot.
     Please enter your bot's token below to continue.
 
@@ -86,7 +86,7 @@ with open("config.json", "w") as f:
 
 
 class FunnyBadge(Client):
-    def __init__(self, *, intents: Intents) -> None:
+    def __init__(self, *, intents: Intents):
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
 
