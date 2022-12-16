@@ -1,13 +1,11 @@
 import requests
-from requests.exceptions import RequestException
 import json
 import inspect
-from colorama import init, Fore, Style
-init()
 
+from colorama import Fore, Style
 from discord import app_commands, Intents, Client, Interaction
 
-# ASCII logo, uses Colorama for coloring 
+# ASCII logo, uses Colorama for coloring
 # the logo. To clean the code I've used the replace function
 # to color some of the logo.
 logo = f"""
@@ -50,7 +48,7 @@ while True:
     # If no token is stored the token variable stores value None
     token = config.get("token", None)
     if token:
-        print(f"\n--- Detected token in {Fore.BLUE}config.json{Fore.RESET} (saved from a previous run). Using stored token. ---\n")
+        print(f"\n--- Detected token in {Fore.GREEN}./config.json{Fore.RESET} (saved from a previous run). Using stored token. ---\n")
     else:
         # Take input from the user if no token is detected
         token = input("> ")
@@ -69,7 +67,7 @@ while True:
     # If the token is incorrect, an error will be printed
     # You will then be asked to enter a token again (while Loop)
     print(f"\nSeems like you entered an {Fore.RED}invalid token{Fore.RESET}. Please enter a valid token (see Github repo for help).")
-    
+
     # Resets the config so that it doesn't use the previous token again
     config = {}
 
@@ -100,6 +98,7 @@ class FunnyBadge(Client):
 # We then do not need any intents to listen to events
 client = FunnyBadge(intents=Intents.none())
 
+
 @client.event
 async def on_ready():
     """ This is called when the bot is ready and has a connection with Discord
@@ -108,9 +107,9 @@ async def on_ready():
     """
     print(inspect.cleandoc(f"""
         Logged in as {client.user} (ID: {client.user.id})
-        
+
         Use this URL to invite {client.user} to your server:
-        {Fore.BLUE}https://discord.com/api/oauth2/authorize?client_id={client.user.id}&scope=applications.commands%20bot{Fore.RESET}
+        {Fore.LIGHTBLUE_EX}https://discord.com/api/oauth2/authorize?client_id={client.user.id}&scope=applications.commands%20bot{Fore.RESET}
     """), end="\n\n")
 
 
