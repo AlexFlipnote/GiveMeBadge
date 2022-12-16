@@ -1,2 +1,3 @@
 discord.py
 requests
+colorama
