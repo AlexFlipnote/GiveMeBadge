@@ -9,17 +9,20 @@ from discord import app_commands, Intents, Client, Interaction
 # the logo. To clean the code I've used the replace function
 # to color some of the logo.
 logo = f"""
-{Fore.GREEN}                 &(%
-{Fore.CYAN}  %###((((((((((((((((#
-{Fore.CYAN}###(((((((((((  .(((((
-{Fore.CYAN}####(((((  (((( *********
-{Fore.CYAN}####((    (((#************#
-{Fore.CYAN}##************************#
-{Fore.CYAN}##************************#
-{Fore.CYAN}##************************#
-{Fore.CYAN}##************************#
-{Fore.BLUE}&*************************{Fore.RESET}\n
-""".replace("*", f"{Fore.BLUE}*").replace("(", f"{Fore.GREEN}(")
+{Fore.LIGHTBLUE_EX}       {Fore.GREEN}cclloooooooooooooo.
+{Fore.LIGHTBLUE_EX},;;;:{Fore.GREEN}oooooooooooooooooooooo.
+{Fore.LIGHTBLUE_EX};;;;{Fore.GREEN}oooooo{Fore.WHITE}kKXK{Fore.GREEN}ooo{Fore.WHITE}NMMWx{Fore.GREEN}ooooo:..
+{Fore.LIGHTBLUE_EX};;;;{Fore.GREEN}oooooo{Fore.WHITE}XMMN{Fore.GREEN}oooo{Fore.WHITE}XNK0x{Fore.GREEN}dddddoo
+{Fore.LIGHTBLUE_EX};;;;{Fore.GREEN}looo{Fore.WHITE}kNMMWx{Fore.GREEN}ooood{Fore.BLUE}xxxxxxxxxxxxxo
+{Fore.LIGHTBLUE_EX};;;;{Fore.GREEN}ld{Fore.WHITE}kXXXXK{Fore.GREEN}ddddd{Fore.BLUE}xxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.LIGHTBLUE_EX};;{Fore.BLUE}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{Fore.BLUE}ldxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{Fore.RESET}
+"""
 
 # inspect.cleandoc() is used to remove the indentation from the message
 # when using triple quotes (makes the code much cleaner)
