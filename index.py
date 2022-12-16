@@ -2,7 +2,8 @@ import requests
 from requests.exceptions import RequestException
 import json
 import inspect
-from colorama import Fore, Style
+from colorama import init, Fore, Style
+init()
 
 from discord import app_commands, Intents, Client, Interaction
 
