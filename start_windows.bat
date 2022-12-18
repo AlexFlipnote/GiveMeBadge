@@ -1,4 +1,5 @@
 @echo off
+title GiveMeBadge
 
 :: This script will run the python script that will run the program
 :: It will also check if python is installed and if it is in PATH
