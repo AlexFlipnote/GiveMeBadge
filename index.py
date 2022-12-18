@@ -63,8 +63,14 @@ while True:
             "Authorization": f"Bot {token}"
         }).json()
     except requests.exceptions.RequestException as e:
+        if e.__class__ == requests.exceptions.ConnectionError:
+            exit("ConnectionResetError: Discord is commonly blocked on public networks, please make sure discord.com is reachable!")
+        
+        elif e.__class__ == requests.exceptions.Timeout:
+            exit("Timeout: Connection to Discord's API has timed out (possibly being rate limited?)")
+        
         # Tells python to quit, along with printing some info on the error that occured
-        raise SystemExit(e)
+        raise exit(f"Unknown error has occurred! Additional info:\n{e}")
 
     # If the token is correct, it will continue the code
     if data.get("id", None):
