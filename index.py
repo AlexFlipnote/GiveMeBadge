@@ -5,7 +5,7 @@ import inspect
 from colorama import Fore, Style
 from discord import app_commands, Intents, Client, Interaction
 
-# ASCII logo, uses Colorama for coloring the logo. 
+# ASCII logo, uses Colorama for coloring the logo.
 logo = f"""
 {Fore.LIGHTBLUE_EX}       {Fore.GREEN}cclloooooooooooooo.
 {Fore.LIGHTBLUE_EX},;;;:{Fore.GREEN}oooooooooooooooooooooo.
@@ -45,8 +45,7 @@ except (FileNotFoundError, json.JSONDecodeError):
 
 
 while True:
-    # Attempts to pull a token from config
-    # If no token is stored the token variable stores value None
+    # If no token is stored in "config" the value defaults to None
     token = config.get("token", None)
     if token:
         print(f"\n--- Detected token in {Fore.GREEN}./config.json{Fore.RESET} (saved from a previous run). Using stored token. ---\n")
@@ -56,7 +55,7 @@ while True:
 
     # Validates if the token you provided was correct or not
     # There is also another one called aiohttp.ClientSession() which is asynchronous
-    # However for such simplicity, it is not worth playing around with async 
+    # However for such simplicity, it is not worth playing around with async
     # and await keywords outside of the event loop
     try:
         data = requests.get("https://discord.com/api/v10/users/@me", headers={
@@ -64,13 +63,13 @@ while True:
         }).json()
     except requests.exceptions.RequestException as e:
         if e.__class__ == requests.exceptions.ConnectionError:
-            exit("ConnectionResetError: Discord is commonly blocked on public networks, please make sure discord.com is reachable!")
-        
+            exit(f"{Fore.RED}ConnectionError{Fore.RESET}: Discord is commonly blocked on public networks, please make sure discord.com is reachable!")
+
         elif e.__class__ == requests.exceptions.Timeout:
-            exit("Timeout: Connection to Discord's API has timed out (possibly being rate limited?)")
-        
+            exit(f"{Fore.RED}Timeout{Fore.RESET}: Connection to Discord's API has timed out (possibly being rate limited?)")
+
         # Tells python to quit, along with printing some info on the error that occured
-        raise exit(f"Unknown error has occurred! Additional info:\n{e}")
+        exit(f"Unknown error has occurred! Additional info:\n{e}")
 
     # If the token is correct, it will continue the code
     if data.get("id", None):
@@ -81,7 +80,7 @@ while True:
     print(f"\nSeems like you entered an {Fore.RED}invalid token{Fore.RESET}. Please enter a valid token (see Github repo for help).")
 
     # Resets the config so that it doesn't use the previous token again
-    config = {}
+    config.clear()
 
 
 # This is used to save the token for the next time you run the bot
@@ -102,7 +101,7 @@ class FunnyBadge(Client):
 
     async def setup_hook(self) -> None:
         """ This is called when the bot boots, to setup the global commands """
-        await self.tree.sync(guild=None)
+        await self.tree.sync()
 
 
 # Variable to store the bot class and interact with it
