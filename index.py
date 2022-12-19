@@ -2,7 +2,6 @@ import requests
 import json
 import inspect
 
-from os import path
 from colorama import Fore, Style
 from discord import app_commands, Intents, Client, Interaction
 
@@ -35,12 +34,13 @@ print(logo + inspect.cleandoc(f"""
     You may close it after the bot has been invited and the command has been ran{Style.RESET_ALL}
 """))
 
-# Checks if a config file has been made
-# If so, load said config, else load no config
-if path.isfile("config.json"):
+# Try except block is useful for when you'd like to capture errors
+try:
     with open("config.json") as f:
         config = json.load(f)
-else:
+except (FileNotFoundError, json.JSONDecodeError):
+    # You can in theory also do "except:" or "except Exception:", but it is not recommended
+    # unless you want to suppress all errors
     config = {}
 
 
@@ -83,16 +83,15 @@ while True:
     config.clear()
 
 
-# Save token into config file for next run if config.json doesn't exsist already
-if not path.isfile("config.json"):
-    with open("config.json", "w") as f:
-        # Create new key 'token' storing our bot's token
-        config["token"] = token
+# This is used to save the token for the next time you run the bot
+with open("config.json", "w") as f:
+    # Check if 'token' key exists in the config.json file
+    config["token"] = token
 
-        # This dumps our working setting to the config.json file
-        # Indent is used to make the file look nice and clean
-        # If you don't want to indent, you can remove the indent=2 from code
-        json.dump(config, f, indent=2)
+    # This dumps our working setting to the config.json file
+    # Indent is used to make the file look nice and clean
+    # If you don't want to indent, you can remove the indent=2 from code
+    json.dump(config, f, indent=2)
 
 
 class FunnyBadge(Client):
