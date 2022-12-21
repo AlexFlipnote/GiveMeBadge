@@ -21,6 +21,8 @@ if !command -v python3 &> /dev/null; then
     exit
 fi
 
+pip3 install -r requirements.txt
+
 python3 index.py
 
 # Exit once python script has been terminated
