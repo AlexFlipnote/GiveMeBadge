@@ -4,7 +4,7 @@
 
 # Requirements 🧾
 - A Discord Bot (create one using the [Discord developer portal](https://discord.com/developers/applications))
-- Python 3.6 or above (https://www.python.org/downloads)
+- Python 3.7 or above (https://www.python.org/downloads)
   - Recommended version [3.10.2](https://www.python.org/downloads/release/python-3102/)
 - A Discord server that you own.
   - Make sure to "enable community" in your server if you haven't already! (`Settings` -> `Enable Community`)
