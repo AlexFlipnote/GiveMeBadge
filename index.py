@@ -1,9 +1,22 @@
 import requests
 import json
 import inspect
+import sys
 
 from colorama import Fore, Style
-from discord import app_commands, Intents, Client, Interaction
+
+# Make sure that the user is running Python 3.7 or higher
+if sys.version_info < (3, 7):
+    exit("Python 3.7 or higher is required to run this bot.")
+
+# Now make sure that the discord.py library is installed or/and is up to date
+try:
+    from discord import app_commands, Intents, Client, Interaction
+except ImportError:
+    exit(
+        "Either discord.py is not installed or you are running an older version of it. "
+        "Please make sure by re-installing the requirements."
+    )
 
 # ASCII logo, uses Colorama for coloring the logo.
 logo = f"""
