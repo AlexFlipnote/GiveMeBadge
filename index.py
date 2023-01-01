@@ -7,7 +7,7 @@ from colorama import Fore, Style
 
 # Make sure that the user is running Python 3.8 or higher
 if sys.version_info < (3, 8):
-    exit("Python 3.9 or higher is required to run this bot!")
+    exit("Python 3.8 or higher is required to run this bot!")
 
 # Now make sure that the discord.py library is installed or/and is up to date
 try:
