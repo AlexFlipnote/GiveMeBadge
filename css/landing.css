@@ -100,6 +100,11 @@ nav {
   margin-bottom: 0;
 }
 
+.changelog-detail {
+  width: fit-content;
+  text-align: left;
+}
+
 .changelog-callout {
   margin: 3rem auto 2rem auto;
   text-align: center;
