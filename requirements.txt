@@ -1,3 +1,0 @@
-discord.py
-requests
-colorama
