@@ -1,0 +1,127 @@
+/* nav specialized to landing page */
+.logo {
+  background: url('../images/GiveMeBadgeLogo.png') no-repeat;
+  background-size: contain;
+  margin: 1rem 0 0 1rem;
+}
+
+nav {
+  background-color: var(--primary-bg-color);
+}
+
+/* hero section */
+.hero {
+  text-align: center;
+  background-color: var(--primary-bg-color);
+  padding: 2rem 0 10rem 0;
+}
+
+.hero-title {
+  font-weight: 900;
+  color: var(--white-color);
+}
+
+.hero-description {
+  margin: -1rem auto 2rem auto;
+  color: var(--light-gray-color)
+}
+
+.hero-terminal {
+  width: 60%;
+  margin: -11rem auto 3rem auto;
+  text-align: left;
+  color: white;
+  padding: 0 1rem;
+  border-radius: 4px;
+  background-color: #232323;
+  min-height: 285px;
+  animation: fadeUp 2s;
+  box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-terminal pre {
+  white-space: pre-line;
+  padding-top: 1rem;
+}
+
+/* feature section */
+.feature {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  max-width: calc(33% - 20px);
+  margin: 0 20px 0 0;
+}
+
+.feature-item .section-title {
+  margin-bottom: 0;
+}
+
+.feature-item p {
+  color: var(--white-color);
+  margin-top: 0.5rem;
+}
+
+/* callout section */
+.callout {
+  text-align: center;
+  padding: 1rem 0 3rem 0;
+}
+
+.callout .button--primary {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* changelog section */
+.changelog {
+  color: var(--white-color);
+  background-color: var(--bg-color);
+  padding: 2rem 0;
+}
+
+.changelog-item {
+  display: flex;
+}
+
+.changelog-meta {
+  flex-basis: 25%;
+}
+
+.changelog-meta small {
+  color: var(--primary-color-light);
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.changelog-title {
+  margin-bottom: 0;
+}
+
+.changelog-callout {
+  margin: 3rem auto 2rem auto;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .hero-terminal {
+    width: 70%;
+  }
+  .tab-container > ul {
+    right: auto;
+    left: 0;
+    padding-left: 0;
+  }
+  .tab-container .code {
+    margin-top: 2rem;
+  }
+  .feature, .keybinding, .changelog-item {
+    flex-direction: column;
+  }
+  .feature-item {
+    max-width: 100%;
+    margin: 0;
+  }
+}

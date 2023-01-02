@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>GiveMeBadge</title>
+      <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+      <link rel="stylesheet" href="./css/global.css">
+      <link rel="stylesheet" href="./css/landing.css">
+      <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <nav>
+      <div class="logo"></div>
+      <ul class="menu">
+        <div class="menu-item toggle"><span></span></div>
+        <li class="menu-item"><a href="doc.html" class="link link-dark"><i class="fa fa-book"></i> Documentation</a></li>
+        <li class="menu-item"><a href="https://github.com/AlexFlipnote/GiveMeBadge" class="link link-dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1 class="hero-title">GiveMeBadge</h1>
+      <p class="hero-description">Get the Discord Devloper Badge and learn a thing or two. Two birds with one stone!</p>
+    </div>
+    <div class="hero-terminal">
+      <pre>
+        <code class="shell-session" id="demo">AlexFlipnote ~ $ </code>
+      </pre>
+    </div>
+    <div class="wrapper">
+      <div class="installation">
+        <h3 class="section-title">Installation</h3>
+        <p>These commands assume you have all required dependencies, if you don't please see <a href="">lorem ipsum</a> for a more detailed installation guide!</p>
+        <div class="tab-container">
+          <ul class="tab-menu">
+            <li class="tab active" data-tab="win">win</li>
+            <li class="tab" data-tab="mac">mac</li>
+            <li class="tab" data-tab="linux">linux</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab-pane active win">$  git clone https://github.com/AlexFlipnote/GiveMeBadge && cd GiveMeBadge && python index.py</code>
+            <code class="tab-pane mac">$  git clone https://github.com/AlexFlipnote/GiveMeBadge && cd GiveMeBadge && python3 index.py</code>
+            <code class="tab-pane linux">$  git clone https://github.com/AlexFlipnote/GiveMeBadge && cd GiveMeBadge && python3 index.py</code>
+          </pre>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-item">
+          <h3 class="section-title">Fast & Light</h3>
+          <p>Easy to pick up and read! Unlike other badge bots, GiveMeBadge focuses on teaching you how to make a bot. Rather than hand feeding you the badge!</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="section-title">Configuration</h3>
+          <p>Store all your settings in a single <span class="code code--inline">config.json</span> file. Never need to retype your bots token every run.</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="section-title">Readability</h3>
+          <p>For better readability, GiveMeBadge has clean, and concise comments as to help you understand the program.</p>
+        </div>
+        <!--<div class="feature-item">
+          <h3 class="section-title">Ease-of-Use</h3>
+          <p>GiveMeBadge is supprisingly easy to use, walking you through each step of running your bot and claiming your badge!</p>
+        </div> -->
+      </div>
+    </div>
+    <div class="changelog">
+      <div class="wrapper">
+        <h3 class="section-title">Changelog</h3>
+        <div class="changelog-item">
+          <div class="changelog-meta">
+            <h4 class="changelog-title">Commit: #somenumber</h4>
+            <small class="changelog-date">00/00/0000</small>
+          </div>
+          <div class="changelog-detail">
+            <ul>
+              <li>Some random changelog text :/</li>
+              <li>Some more epic badge-ing</li>
+              <li>Now supporting people who care!</li>
+              <li>Lorem Ipsum :)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog-item">
+          <div class="changelog-meta">
+            <h4 class="changelog-title">Commit: #somenumber</h4>
+            <small class="changelog-date">00/00/0000</small>
+          </div>
+          <div class="changelog-detail">
+            <ul>
+              <li>Some random changelog text :/</li>
+              <li>Some more epic badge-ing</li>
+              <li>Now supporting people who care!</li>
+              <li>Lorem Ipsum :)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog-item">
+          <div class="changelog-meta">
+            <h4 class="changelog-title">Commit: #somenumber</h4>
+            <small class="changelog-date">00/00/0000</small>
+          </div>
+          <div class="changelog-detail">
+            <ul>
+              <li>Some random changelog text :/</li>
+              <li>Some more epic badge-ing</li>
+              <li>Now supporting people who care!</li>
+              <li>Lorem Ipsum :)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog-callout">
+          <a href="#" class="button-secondary">Checkout Full Log</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">GiveMeBadge is developed by ZackeryRSmith exclusively for <a href="https://github.com/AlexFlipnote" target="_blank" class="link link-light">AlexFlipnote</a>, though open-source this website is protected by the GNU GPL3.0 licence.</footer>
+
+    <!-- Used for color in the hero terminal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <script src="index.js"></script>
+  </body>
+</html>
