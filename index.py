@@ -3,7 +3,8 @@ import json
 import inspect
 import sys
 
-from colorama import Fore, Style
+from colorama import init, Fore, Style
+init()
 
 # Make sure that the user is running Python 3.8 or higher
 if sys.version_info < (3, 8):
