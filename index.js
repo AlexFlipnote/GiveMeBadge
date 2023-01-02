@@ -1,9 +1,13 @@
 const get = (selector, scope = document) => scope.querySelector(selector);
 const getAll = (selector, scope = document) => scope.querySelectorAll(selector);
 
+// Grab x number of commits
+const grabCommits = (x) => fetch(`https://api.github.com/repos/AlexFlipnote/GiveMeBadge/commits?per_page=${x}`);
+
 const topNav = get('.menu');
 const icon = get('.toggle');
 const btns = getAll('.js-btn');
+const changelogs = getAll('.changelog-item');
 
 // typewriter effect
 if (document.getElementById('demo')) {
@@ -121,3 +125,18 @@ window.onscroll = () => {
     }
   }
 };
+
+// TODO: Fix some formatting, adding things such as bullet point detection
+grabCommits(3).then(res => res.json()).then(res => {
+  const changelogTitle = document.getElementsByClassName('changelog-title');
+  const changelogDate = document.getElementsByClassName('changelog-date');
+  const changelogDetail = document.getElementsByClassName('changelog-detail');
+  for (let i = 0; i < changelogs.length; i++) {
+    const commit = res[i].commit;
+
+    console.log(commit);
+    changelogTitle[i].innerHTML = `<a href="https://github.com/AlexFlipnote/GiveMeBadge/commit/${commit.url.split('/').pop()}">#${commit.url.split('/').pop().slice(0, 8)}...</a>`;
+    changelogDate[i].innerHTML = commit.author.date.replace('T', ' ').replace('Z', '');
+    changelogDetail[i].innerHTML = "<p>" + commit.message + '</p>'
+  }
+});
