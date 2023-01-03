@@ -27,6 +27,11 @@
         <ul>
           <li class="js-btn selected">Get Started</li>
           <li class="js-btn">Installation</li>
+          <ul>
+            <li class="js-btn">Creating a Discord Bot</li>
+            <li class="js-btn">Installing Python</li>
+            <li class="js-btn">GiveMeBadge</li>
+          </ul>
           <li class="js-btn">Issues</li>
         </ul>
       </aside>
@@ -44,7 +49,7 @@
           <ul style="color: var(--white-color);">
             <li>A Discord Bot (create one using the <a href="https://discord.com/developers/applications">Discord developer portal</a>)</li>
             <li>Python 3.8 or above (<a href="https://www.python.org/downloads">https://www.python.org/downloads</a>)</li>
-            <ul><li>The recommended version of Python to use is <a href="https://www.python.org/downloads/release/python-3102/">3.10.2</a></li></ul>
+            <ul><li>The recommended version of Python to use is <a href="https://www.python.org/downloads/release/python-3102">3.10.2</a></li></ul>
             <li>A Discord server that <b>you</b> own</li>
             <ul><li>Make sure to "enable community" in your server if you haven't already! (Settings -> Enable Community)</li></ul>
           </ul>
@@ -64,8 +69,39 @@
           <img src="./images/botstep3.gif" style="padding-left: 100px;" />
           
           <h4>Installing Python</h4>
-          <p>Installing Python is relatively the same on each platform, just go to <a href="https://www.python.org/downloads">https://www.python.org/downloads</a> and select a version 3.8 or greater. Then install the file for your respective operating system, for example Windows users would install the Windows installer (64-bit or 32-bit depending on your system)</p>
+          <p>Installing Python is relatively the same on each platform, just go to <a href="https://www.python.org/downloads">https://www.python.org/downloads</a> and download version 3.8 (or greater), recommend version is <a href="https://www.python.org/downloads/release/python-3102">3.10.2</a>. Install the file for your respective operating system, for example Windows users would install the Windows installer (64-bit or 32-bit depending on your system)</p>
           
+          <h4>GiveMeBadge</h4>
+          <p>To install GiveMeBadge you must first download the <a href="https://github.com/AlexFlipnote/GiveMeBadge/zipball/master/">GiveMeBadge repository</a>. Extract the contents of the GiveMeBadge zip file into a folder. Now open the folder in a command prompt (or terminal depending on your system). On Windows open a command prompt and type cd, then drag the desired folder into the command prompt.</p>
+
+          <p>Install all modules in requirements.txt, to do this run the following command for your respective system</p>
+          <div class="tab-container">
+            <ul class="tab-menu">
+              <li class="tab active" data-tab="win">win</li>
+              <li class="tab" data-tab="mac">mac</li>
+              <li class="tab" data-tab="linux">linux</li>
+            </ul>
+            <pre class="nohighlight code">
+              <code class="tab-pane active win">$  python -m pip install -r requirements.txt</code>
+              <code class="tab-pane mac linux">$  python3 -m pip install -r requirements.txt</code>
+            </pre>
+          </div>
+          <p>If the installation fails try running your command prompt as administrator (or for mac/linux use sudo). Now run index.py</p>
+          <div class="tab-container">
+            <ul class="tab-menu">
+              <li class="tab active" data-tab="win">win</li>
+              <li class="tab" data-tab="mac">mac</li>
+              <li class="tab" data-tab="linux">linux</li>
+            </ul>
+            <pre class="nohighlight code">
+              <code class="tab-pane active win">$  python index.py</code>
+              <code class="tab-pane mac linux">$  python3 index.py</code>
+            </pre>
+          </div>
+          <p>You'll eventually be propmted to enter your bots token (the thing we copied earlier), enter your token and press enter. GiveMeBadge will give you a link which will allow you to invite your bot. Invite your bot to the server of your choice, then in that server type /hello</p>
+
+          <p>That's it! Follow the instructions given to you by the bot and you'll get your badge in no time! If you need any support join the <a href="https://discord.gg/AlexFlipnote">discord server</a>!</p>
+
           <br />
 
         </section>
