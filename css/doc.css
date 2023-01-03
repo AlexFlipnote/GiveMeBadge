@@ -10,6 +10,10 @@ html, body {
   grid-template-columns: 1fr 150px 60% 1fr;
 }
 
+h4 {
+  color: var(--primary-color);
+}
+
 .wrapper {
   display: flex;
   flex-grow: 1;
@@ -51,6 +55,7 @@ html, body {
 .doc-nav {
   flex-basis: 20%;
   font-weight: 200;
+  color: var(--white-color);
 }
 
 .doc-nav ul {
