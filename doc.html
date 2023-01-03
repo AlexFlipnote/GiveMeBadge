@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GiveMeBadge Docs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc-bg"></div>
+    <nav class="header">
+      <h1 class="logo">GiveMeBadge <span class="logo-thin">Doc</span></h1>
+      <ul class="menu">
+        <div class="menu-item toggle"><span></span></div>
+        <li class="menu-item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu-item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc-nav">
+        <ul>
+          <li class="js-btn selected">Get Started</li>
+          <li class="js-btn">Installation</li>
+          <li class="js-btn">Issues</li>
+        </ul>
+      </aside>
+      <article class="doc-content">
+        <section class="js-section">
+          <h2 class="section-title">Get Started</h2>
+          <p>Learn how to install and use GiveMeBadge, this guide is pretty concise and also mentions some common issues but, you may also find use in either one of these video tutorials.</p>
+          <a href="https://i.alexflipnote.dev/7TzozoL.mp4">No voice over</a> <br />
+          <a href="https://www.youtube.com/watch?v=Pmo28SdCUUI">Voice over (by NTTS)</a>
+
+          <br />
+
+          <h3 class="section-title">Installation</h3>
+          <p>GiveMeBadge requires a few things to function:</p>
+          <ul>
+            <li>A Discord Bot (create one using the <a href="https://discord.com/developers/applications">Discord developer portal</a>)</li>
+            <li>Python 3.8 or above (<a href="https://www.python.org/downloads">https://www.python.org/downloads</a>)</li>
+            <ul><li>The recommended version of Python to use is <a href="https://www.python.org/downloads/release/python-3102/">3.10.2</a></li></ul>
+            <li>A Discord server that <b>you</b> own</li>
+            <ul><li>Make sure to "enable community" in your server if you haven't already! (Settings -> Enable Community)</li></ul>
+          </ul>
+          <p>Let's disect each part a bit for those of you who need some extra guidence</p>
+
+          <!-- Creating a discord bot -->
+          <h4>Creating a Discord bot</h4>
+          <p>To create a Discord bot via the <a href="https://discord.com/developers/applications">Developer Portal</a> follow these steps</p>
+          
+          <p>1. Create a new application</p>
+          <img src="./images/botstep1.gif" style="padding-left: 100px;" />
+          
+          <p>2. Add a bot to the application</p>
+          <img src="./images/botstep2.gif" style="padding-left: 100px;" />
+
+          <p>3. Copy bot token and store it somewhere for later</p>
+          <img src="./images/botstep3.gif" style="padding-left: 100px;" />
+          
+          <h4>Installing Python</h4>
+          <p>Installing Python is relatively the same on each platform, just go to <a href="https://www.python.org/downloads">https://www.python.org/downloads</a> and select a version 3.8 or greater. Then install the file for your respective operating system, for example Windows users would install the Windows installer (64-bit or 32-bit depending on your system)</p>
+          
+          <br />
+
+        </section>
+        <section class="js-section">
+          <h3 class="section-title">Issues</h3>
+          <p>Add some common issues here</p>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">This website is developed by ZackeryRSmith exclusively for <a href="https://github.com/AlexFlipnote" target="_blank" class="link link-light">AlexFlipnote</a>, though open-source, this website is still protected by the GNU GPL3.0 licence.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="index.js"></script>
+  </body>
+</html>
