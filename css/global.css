@@ -54,6 +54,7 @@ hr {
 .tab-container {
   color: var(--white-color);
   position: relative;
+  top: 1rem;
 }
 
 .tab-container > ul {
