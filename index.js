@@ -63,6 +63,8 @@ function tabClick(event) {
   const panes = getAll('.tab-pane', scope);
   const activePane = get(`.${clickedTab.getAttribute('data-tab')}`, scope);
 
+  if (!activePane) return;
+
   // remove all active tab classes
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].classList.remove('active');
