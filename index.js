@@ -1,13 +1,16 @@
 const get = (selector, scope = document) => scope.querySelector(selector);
 const getAll = (selector, scope = document) => scope.querySelectorAll(selector);
 
-// Grab x number of commits
+// grab x number of commits
 const grabCommits = (x) => fetch(`https://api.github.com/repos/AlexFlipnote/GiveMeBadge/commits?per_page=${x}`);
 
 const topNav = get('.menu');
 const icon = get('.toggle');
-const btns = getAll('.js-btn');
 const changelogs = getAll('.changelog-item');
+
+// in page scrolling for documentaiton page
+const btns = getAll('.js-btn');
+const sections = getAll('.js-section');
 
 // typewriter effect
 if (document.getElementById('demo')) {
@@ -52,9 +55,8 @@ if (document.getElementById('demo')) {
 const tabContainers = getAll('.tab-container');
 
 // bind click event to each tab container
-for (let i = 0; i < tabContainers.length; i++) {
+for (let i = 0; i < tabContainers.length; i++)
   get('.tab-menu', tabContainers[i]).onclick = tabClick;
-}
 
 function tabClick(event) {
   const scope = event.currentTarget.parentNode;
@@ -64,14 +66,12 @@ function tabClick(event) {
   const activePane = get(`.${clickedTab.getAttribute('data-tab')}`, scope);
 
   // remove all active tab classes
-  for (let i = 0; i < tabs.length; i++) {
+  for (let i = 0; i < tabs.length; i++)
     tabs[i].classList.remove('active');
-  }
 
   // remove all active pane classes
-  for (let i = 0; i < panes.length; i++) {
+  for (let i = 0; i < panes.length; i++)
     panes[i].classList.remove('active');
-  }
 
   // apply active classes on desired tab and pane
   clickedTab.classList.add('active');
@@ -90,9 +90,9 @@ function showNav() {
 icon.onclick = showNav;
 
 function setActiveLink(event) {
-  for (let i = 0; i < btns.length; i++) {
+  // remove all active tab classes
+  for (let i = 0; i < btns.length; i++)
     btns[i].classList.remove('selected');
-  }
 
   event.target.classList.add('selected');
 }
@@ -107,10 +107,11 @@ function smoothScrollTo(i, event) {
   });
 }
 
+console.log(sections)
+
 if (btns.length && sections.length) {
-  for (let i = 0; i < btns.length; i++) {
+  for (let i = 0; i < btns.length; i++)
     btns[i].onclick = smoothScrollTo.bind(this, i);
-  }
 }
 
 // fix menu to page-top once user starts scrolling
@@ -118,25 +119,24 @@ window.onscroll = () => {
   const docNav = get('.doc-nav > ul');
 
   if (docNav) {
-    if (window.pageYOffset > 63) {
+    if (window.pageYOffset > 63)
       docNav.classList.add('fixed');
-    } else {
+    else
       docNav.classList.remove('fixed');
-    }
   }
 };
 
-// TODO: Fix some formatting, adding things such as bullet point detection
-grabCommits(3).then(res => res.json()).then(res => {
-  const changelogTitle = document.getElementsByClassName('changelog-title');
-  const changelogDate = document.getElementsByClassName('changelog-date');
-  const changelogDetail = document.getElementsByClassName('changelog-detail');
-  for (let i = 0; i < changelogs.length; i++) {
-    const commit = res[i].commit;
+// TODO: Fix some formatting. Add things such as bullet point detection etc
+if (changelogs.length)
+  grabCommits(3).then(res => res.json()).then(res => {
+    const changelogTitle = document.getElementsByClassName('changelog-title');
+    const changelogDate = document.getElementsByClassName('changelog-date');
+    const changelogDetail = document.getElementsByClassName('changelog-detail');
+    for (let i = 0; i < changelogs.length; i++) {
+      const commit = res[i].commit;
 
-    console.log(commit);
-    changelogTitle[i].innerHTML = `<a href="https://github.com/AlexFlipnote/GiveMeBadge/commit/${commit.url.split('/').pop()}">#${commit.url.split('/').pop().slice(0, 8)}...</a>`;
-    changelogDate[i].innerHTML = commit.author.date.replace('T', ' ').replace('Z', '');
-    changelogDetail[i].innerHTML = "<p>" + commit.message + '</p>'
-  }
-});
+      changelogTitle[i].innerHTML = `<a href="https://github.com/AlexFlipnote/GiveMeBadge/commit/${commit.url.split('/').pop()}">#${commit.url.split('/').pop().slice(0, 8)}...</a>`;
+      changelogDate[i].innerHTML = commit.author.date.replace('T', ' ').replace('Z', '');
+      changelogDetail[i].innerHTML = "<p>" + commit.message + '</p>'
+    }
+  });
