@@ -10,8 +10,7 @@
   - Make sure to "enable community" in your server if you haven't already! (`Settings` -> `Enable Community`)
 
 ## Video Tutorial 📼
-If you need visual help on how to do this, then [click here and watch this video](https://i.alexflipnote.dev/7TzozoL.mp4)<br>
-However if you need with voiceover, you can [click here and watch NTTS video on it](https://www.youtube.com/watch?v=Pmo28SdCUUI)
+[click here and watch NTTS video on it](https://www.youtube.com/watch?v=Pmo28SdCUUI) (skip to 2:50 if you already have the bot ready from the developer panel)
 
 ## Usage ✨
 1. Download and install [Python](https://www.python.org/downloads) if you haven't already.
