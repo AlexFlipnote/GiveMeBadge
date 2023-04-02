@@ -44,7 +44,7 @@ print(logo + inspect.cleandoc(f"""
     Please enter your bot's token below to continue.
 
     {Style.DIM}Don't close this application after entering the token
-    You may close it after the bot has been invited and the command has been ran{Style.RESET_ALL}
+    You may close it after the bot has been invited and the command has been run{Style.RESET_ALL}
 """))
 
 # Try except block is useful for when you'd like to capture errors
