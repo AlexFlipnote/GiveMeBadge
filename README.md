@@ -2,7 +2,7 @@
   <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/6DKsc2i.png" width="750px">
 </p>
 
-# Table Of Contents
+# Table of contents
 
 - [Table of contents](#table-of-contents)
 - [Requirements 🧾](#requirements-)
@@ -120,5 +120,12 @@ Big thanks to all of the amazing people who have helped by contributing to this 
 
 ---
 <h3 align = "center">
+
+![GitHub Repo stars](https://img.shields.io/github/stars/AlexFlipnote/GiveMeBadge?style=social)
+![GitHub forks](https://img.shields.io/github/forks/AlexFlipnote/GiveMeBadge?style=social)
+![GitHub](https://img.shields.io/github/license/AlexFlipnote/GiveMeBadge?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues-raw/AlexFlipnote/GiveMeBadge?style=flat-square)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/AlexFlipnote/GiveMeBadge?style=flat-square)
+
 
 </h3>
