@@ -2,6 +2,15 @@
   <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/6DKsc2i.png" width="750px">
 </p>
 
+# Table Of Contents
+
+- [Table of contents](#table-of-contents)
+- [Requirements 🧾](#requirements-)
+  - [Video Tutorial 📼](#video-tutorial-)
+  - [Usage ✨](#usage-)
+  - [Help needed? 📞](#help-needed-)
+  - [Contributors 👥](#contributors-)
+
 # Requirements 🧾
 - A Discord Bot (create one using the [Discord developer portal](https://discord.com/developers/applications))
 - Python 3.8 or above (https://www.python.org/downloads)
@@ -97,12 +106,19 @@ Go to [This link](https://discord.com/developers/active-developer) and claim you
 ---
 
 ## Help needed? 📞
-Join https://discord.gg/AlexFlipnote if you need help.
+Join our [Discord server](https://discord.gg/AlexFlipnote) if you need help.
 
-## Contributors
+
+---
+
+## Contributors 👥
 Big thanks to all of the amazing people who have helped by contributing to this project!
 
 <a href="https://github.com/AlexFlipnote/GiveMeBadge/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AlexFlipnote/GiveMeBadge" />
 </a>
 
+---
+<h3 align = "center">
+
+</h3>
