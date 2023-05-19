@@ -5,6 +5,8 @@ import sys
 
 from colorama import Fore, Style
 
+colorama.just_fix_windows_console()
+
 # Make sure that the user is running Python 3.8 or higher
 if sys.version_info < (3, 8):
     exit("Python 3.8 or higher is required to run this bot!")
