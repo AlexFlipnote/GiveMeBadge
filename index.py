@@ -3,9 +3,9 @@ import json
 import inspect
 import sys
 
-from colorama import Fore, Style
+from colorama import Fore, Style, just_fix_windows_console
 
-colorama.just_fix_windows_console()
+just_fix_windows_console()
 
 # Make sure that the user is running Python 3.8 or higher
 if sys.version_info < (3, 8):
