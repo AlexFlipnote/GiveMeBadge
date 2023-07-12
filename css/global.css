@@ -9,7 +9,7 @@
   --white-color: whitesmoke;
   --light-gray-color: #C6CBD1;
   --medium-gray-color: #959DA5;
-  --dark-gray-color: #444D56; 
+  --dark-gray-color: #444D56;
   --primary-bg-color: #252526;
   --bg-color: #2d2d30;
   --code-bg-color: #232325;
@@ -298,7 +298,7 @@ table td:first-child {
 /* layout */
 .wrapper {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
 }
 
 .footer {

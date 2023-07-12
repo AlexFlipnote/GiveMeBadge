@@ -1,0 +1,2 @@
+# Just so it does not upload config after switching branch
+config.json
