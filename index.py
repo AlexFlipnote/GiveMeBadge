@@ -63,7 +63,10 @@ while True:
     # If no token is stored in "config" the value defaults to None
     token = config.get("token", None)
     if token:
-        print(f"\n--- Detected token in {Fore.GREEN}./config.json{Fore.RESET} (saved from a previous run). Using stored token. ---\n")
+        print(
+            f"\n--- Detected token in {Fore.GREEN}./config.json{Fore.RESET} "
+            "(saved from a previous run). Using stored token. ---\n"
+        )
     else:
         # Take input from the user if no token is detected
         token = input("> ")
@@ -73,15 +76,25 @@ while True:
     # However for such simplicity, it is not worth playing around with async
     # and await keywords outside of the event loop
     try:
-        data = requests.get("https://discord.com/api/v10/users/@me", headers={
-            "Authorization": f"Bot {token}"
-        }).json()
+        r = requests.get(
+            "https://discord.com/api/v10/users/@me",
+            headers={"Authorization": f"Bot {token}"}
+        )
+        data = r.json()
     except requests.exceptions.RequestException as e:
         if e.__class__ == requests.exceptions.ConnectionError:
-            exit(f"{Fore.RED}ConnectionError{Fore.RESET}: Discord is commonly blocked on public networks, please make sure discord.com is reachable!")
+            exit(
+                f"{Fore.RED}ConnectionError{Fore.RESET}: "
+                "Discord is commonly blocked on public networks, "
+                "please make sure discord.com is reachable!"
+            )
 
         elif e.__class__ == requests.exceptions.Timeout:
-            exit(f"{Fore.RED}Timeout{Fore.RESET}: Connection to Discord's API has timed out (possibly being rate limited?)")
+            exit(
+                f"{Fore.RED}Timeout{Fore.RESET}: "
+                "Connection to Discord's API has timed out "
+                "(possibly being rate limited?)"
+            )
 
         # Tells python to quit, along with printing some info on the error that occured
         exit(f"Unknown error has occurred! Additional info:\n{e}")
@@ -92,7 +105,10 @@ while True:
 
     # If the token is incorrect, an error will be printed
     # You will then be asked to enter a token again (while Loop)
-    print(f"\nSeems like you entered an {Fore.RED}invalid token{Fore.RESET}. Please enter a valid token (see Github repo for help).")
+    print(
+        f"\nSeems like you entered an {Fore.RED}invalid token{Fore.RESET}. "
+        "Please enter a valid token (see Github repo for help)."
+    )
 
     # Resets the config so that it doesn't use the previous token again
     config.clear()
@@ -127,10 +143,14 @@ client = FunnyBadge(intents=Intents.none())
 
 @client.event
 async def on_ready():
-    """ This is called when the bot is ready and has a connection with Discord
-        It also prints out the bot's invite URL that automatically uses your
-        Client ID to make sure you invite the correct bot with correct scopes.
     """
+    This is called when the bot is ready and has a connection with Discord
+    It also prints out the bot's invite URL that automatically uses your
+    Client ID to make sure you invite the correct bot with correct scopes.
+    """
+    if not client.user:
+        raise RuntimeError("on_ready() somehow got called before Client.user was set!")
+
     print(inspect.cleandoc(f"""
         Logged in as {client.user} (ID: {client.user.id})
 
@@ -163,4 +183,5 @@ async def hello(interaction: Interaction):
     """))
 
 # Runs the bot with the token you provided
+# Keep the terminal/command prompt open to keep the bot running
 client.run(token)
