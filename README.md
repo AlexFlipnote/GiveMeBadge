@@ -2,7 +2,7 @@
   <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/6DKsc2i.png" width="750px">
 </p>
 
-# Table of contents
+# 1. Table of contents
 
 - [Table of contents](#table-of-contents)
 - [Requirements 🧾](#requirements-)
@@ -11,29 +11,32 @@
   - [Help needed? 📞](#help-needed-)
   - [Contributors 👥](#contributors-)
 
-# Requirements 🧾
+<br>
+
+# 2. Requirements 🧾
 - A Discord Bot (create one using the [Discord developer portal](https://discord.com/developers/applications))
 - Python 3.8 or above (https://www.python.org/downloads)
   - Recommended version [3.10.2](https://www.python.org/downloads/release/python-3102/)
 - A Discord server that you own.
   - Make sure to "enable community" in your server if you haven't already! (`Settings` -> `Enable Community`)
 
-## Video Tutorial 📼
-[click here and watch NTTS video on it](https://www.youtube.com/watch?v=Pmo28SdCUUI) (skip to 2:50 if you already have the bot ready from the developer panel)
+<br>
 
-## Usage ✨
+# 3. Video Tutorial 📼
+[click here and watch NTTS video on it](https://www.youtube.com/watch?v=Pmo28SdCUUI) *(skip to **2:50** if you already have the bot ready from the developer panel)*
 
+<br>
 
+# 4. Usage ✨
 ### ✏️ <ins>Step 1:</ins>
 Download and install [Python](https://www.python.org/downloads) if you haven't already.
 
    ![](https://i.alexflipnote.dev/2Ucs5Hf.png)
 
-
+<br>
 
 ### ✏️ <ins>Step 2:</ins> 
-Open CMD/Terminal inside this folder.
-> On Windows, open a `command prompt` as administrator. Type `cd` with a space and drag the desired folder into it. Press enter.
+On Windows, Open a *`CMD`* or *`Terminal`* as administrator inside that folder. Type `cd` with a space and drag the desired folder into it. Press enter.
 
 <div align="center">
     <img src="https://i.alexflipnote.dev/7PvV4Eo.png" alt="uvu" width="400">
@@ -41,32 +44,35 @@ Open CMD/Terminal inside this folder.
     <br>
 </div>
 
-
 <!--
  ![](https://i.alexflipnote.dev/7PvV4Eo.png)
 -->
 
-
+<br>
 
 ### ✏️ <ins>Step 3:</ins> 
 Install `requirements.txt` with the command below 
-```
+```ruby
 pip install -r requirements.txt
 ```
+> [!important]
 > If you are on Windows, you might need to run command prompt as Administrator)
 
 ![](https://i.alexflipnote.dev/4QPnZiX.gif)
 
-
+<br>
 
 ### ✏️ <ins>Step 4:</ins> 
-Navigate to the [Discord Developer Portal](https://discord.com/developers/applications), sign in to your account, click ***New Application*** and choose any name. Click accept and create. Also heading the `Bot` section and `Add Bot`. If thats your first app you might see the `Bot Token`, If is not just basically click on `Reset Token` and copy, storage it
+- Navigate to the [Discord Developer Portal](https://discord.com/developers/applications).
+- Sign in to your account, click ***New Application*** and choose any name. Click accept and create. 
+- Also heading the `Bot` section and `Add Bot`. 
+- If thats your first app you might see the `Bot Token`, If is not just basically click on `Reset Token` and copy, storage it
 
-
+<br>
 
 ### ✏️ <ins>Step 5:</ins> 
 Open the script by using the command. (It might be different, like Linux and MacOS can be using python3) 
-```
+```ruby
 python index.py
 ```
 
@@ -80,7 +86,7 @@ python index.py
 ![](https://i.alexflipnote.dev/9BNt3XM.png)
 -->
 
-
+<br>
 
 ### ✏️ <ins>Step 6:</ins> 
 Paste your Discord token by copying it and right-clicking on the application. Some users can also try `CTRL + V` or `CTRL + Shift + V`.
@@ -88,26 +94,23 @@ Paste your Discord token by copying it and right-clicking on the application. So
    - Note that to make it respond to your commands, you will need to keep the application/script window alive as it is what runs the bot to begin with. After you are done with everything, you can safely just close it.
 
 
-
 ### ✏️ <ins>Step 7:</ins> 
 When the bot has logged in, copy the invite link given to you by highlighting the URL and right-clicking, then go to a browser and paste the URL to invite the bot in to your server. (***REPEAT: Make sure that your server enabled the Community***)
-
-
 
 ### ✏️ <ins>Step 8:</ins> 
 Within the server, type `/` and use the `/hello` command provided to you.
 
-
-
 ### ✏️ <ins>Step 9:</ins> 
 Go to [This link](https://discord.com/developers/active-developer) and claim your badge.
-> It might take 24 hours before you are able to claim at all, so please take time to wait a bit if that is the case.
 
----
+<br>
 
-## Help needed? 📞
-Join our [Discord server](https://discord.gg/AlexFlipnote) if you need help.
+> [!caution]
+> - It might take 24 hours before you are able to claim at all, so please take time to wait a bit if that is the case.
+> - Help needed? 📞 join our [Discord server](https://discord.gg/AlexFlipnote) if you need help.
 
+
+<br>
 
 ---
 
