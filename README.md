@@ -31,7 +31,7 @@ Download and install [Python](https://www.python.org/downloads) if you haven't a
 
 
 
-### ✏️ <ins>Step 2:</ins> 
+### ✏️ <ins>Step 2:</ins>
 Open CMD/Terminal inside this folder.
 > On Windows, open a `command prompt` as administrator. Type `cd` with a space and drag the desired folder into it. Press enter.
 
@@ -48,8 +48,8 @@ Open CMD/Terminal inside this folder.
 
 
 
-### ✏️ <ins>Step 3:</ins> 
-Install `requirements.txt` with the command below 
+### ✏️ <ins>Step 3:</ins>
+Install `requirements.txt` with the command below
 ```
 pip install -r requirements.txt
 ```
@@ -59,13 +59,13 @@ pip install -r requirements.txt
 
 
 
-### ✏️ <ins>Step 4:</ins> 
+### ✏️ <ins>Step 4:</ins>
 Navigate to the [Discord Developer Portal](https://discord.com/developers/applications), sign in to your account, click ***New Application*** and choose any name. Click accept and create. Also heading the `Bot` section and `Add Bot`. If thats your first app you might see the `Bot Token`, If is not just basically click on `Reset Token` and copy, storage it
 
 
 
-### ✏️ <ins>Step 5:</ins> 
-Open the script by using the command. (It might be different, like Linux and MacOS can be using python3) 
+### ✏️ <ins>Step 5:</ins>
+Open the script by using the command. (It might be different, like Linux and MacOS can be using python3)
 ```
 python index.py
 ```
@@ -82,31 +82,31 @@ python index.py
 
 
 
-### ✏️ <ins>Step 6:</ins> 
+### ✏️ <ins>Step 6:</ins>
 Paste your Discord token by copying it and right-clicking on the application. Some users can also try `CTRL + V` or `CTRL + Shift + V`.
    - **IMPORTANT:** DO NOT share the token! Others can use this to log into your account.
    - Note that to make it respond to your commands, you will need to keep the application/script window alive as it is what runs the bot to begin with. After you are done with everything, you can safely just close it.
 
 
 
-### ✏️ <ins>Step 7:</ins> 
+### ✏️ <ins>Step 7:</ins>
 When the bot has logged in, copy the invite link given to you by highlighting the URL and right-clicking, then go to a browser and paste the URL to invite the bot in to your server. (***REPEAT: Make sure that your server enabled the Community***)
 
 
 
-### ✏️ <ins>Step 8:</ins> 
+### ✏️ <ins>Step 8:</ins>
 Within the server, type `/` and use the `/hello` command provided to you.
 
 
 
-### ✏️ <ins>Step 9:</ins> 
+### ✏️ <ins>Step 9:</ins>
 Go to [This link](https://discord.com/developers/active-developer) and claim your badge.
 > It might take 24 hours before you are able to claim at all, so please take time to wait a bit if that is the case.
 
 ---
 
 ## Help needed? 📞
-Join our [Discord server](https://discord.gg/AlexFlipnote) if you need help.
+Join our [Discord server](https://discord.gg/yqb7vATbjH) if you need help.
 
 
 ---
