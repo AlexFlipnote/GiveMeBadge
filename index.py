@@ -8,8 +8,9 @@ from colorama import Fore, Style, just_fix_windows_console
 just_fix_windows_console()
 
 # Make sure that the user is running Python 3.8 or higher
-if sys.version_info < (3, 8) or sys.version_info >= (3, 13):
-    exit("Only versions between Python 3.8 and 3.12 is supported")
+
+if sys.version_info < (3, 8):
+    exit("Only Python 3.8 and higher is supported")
 
 # Now make sure that the discord.py library is installed or/and is up to date
 try:
