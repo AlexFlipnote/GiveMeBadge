@@ -1,7 +1,7 @@
 > [!NOTE]
 > This repository has been archived and is no longer maintained. The reason is that Discord has decided to discontinue the Developer badge program. As a result, this project has become obsolete. For more information, please refer to the [announcement from Discord](https://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge) regarding the discontinuation of the Developer badge program.
 >
-> The repository is kept online for historical reference and learning purposes, I will not be helping with any issues related to this project.
+> The repository is kept online for historical reference and learning purposes, I will not be helping with any issues related to this project. If you wish to continue developing with Discord bots and use a project I maintain, check out my [Discord API library (discord.http)](https://github.com/AlexFlipnote/discord.http) to learn more about it and create bots. You might as well learn to code while you are at it ❤️
 
 <p align="center">
   <img alt="GiveMeBadge" src="./assets/banner.png" width="750px">
