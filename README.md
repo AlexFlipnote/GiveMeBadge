@@ -1,5 +1,10 @@
+> [!NOTE]
+> This repository has been archived and is no longer maintained. The reason is that Discord has decided to discontinue the Developer badge program. As a result, this project has become obsolete. For more information, please refer to the [announcement from Discord](https://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge) regarding the discontinuation of the Developer badge program.
+>
+> The repository is kept online for historical reference and learning purposes, I will not be helping with any issues related to this project.
+
 <p align="center">
-  <img alt="GiveMeBadge" src="https://i.alexflipnote.dev/6DKsc2i.png" width="750px">
+  <img alt="GiveMeBadge" src="./assets/banner.png" width="750px">
 </p>
 
 # Table of contents
@@ -8,6 +13,15 @@
 - [Requirements 🧾](#requirements-)
   - [Video Tutorial 📼](#video-tutorial-)
   - [Usage ✨](#usage-)
+    - [✏️ Step 1:](#️-step-1)
+    - [✏️ Step 2:](#️-step-2)
+    - [✏️ Step 3:](#️-step-3)
+    - [✏️ Step 4:](#️-step-4)
+    - [✏️ Step 5:](#️-step-5)
+    - [✏️ Step 6:](#️-step-6)
+    - [✏️ Step 7:](#️-step-7)
+    - [✏️ Step 8:](#️-step-8)
+    - [✏️ Step 9:](#️-step-9)
   - [Help needed? 📞](#help-needed-)
   - [Contributors 👥](#contributors-)
 
